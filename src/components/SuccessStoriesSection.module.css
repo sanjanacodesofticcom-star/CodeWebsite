@@ -1,0 +1,163 @@
+/* Success Stories Section - Clean White Theme */
+.section {
+  background: #ffffff;
+  padding: 6rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.storyCard {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.storyCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-blue);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #f1f5f9;
+  overflow: hidden;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.storyCard:hover .imageWrapper img {
+  transform: scale(1.03);
+}
+
+.cardBody {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-blue);
+  margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 750;
+  color: #111827;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+  font-size: 14.5px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.metricsRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+  margin-top: auto;
+}
+
+.metricBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.metricValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--brand-blue);
+}
+
+.metricLabel {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111827;
+  transition: color 0.2s ease;
+}
+
+.cardCta:hover {
+  color: var(--brand-blue);
+}
+
+@media (max-width: 1024px) {
+  .storiesGrid {
+    grid-template-columns: 1fr;
+  }
+}

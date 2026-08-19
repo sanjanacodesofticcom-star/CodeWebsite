@@ -1,0 +1,129 @@
+/* Trust & Partners Section - Clean White Theme with Project File Logos */
+.partnerSection {
+  background: #ffffff;
+  padding: 4.5rem 0 4rem 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem auto;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* 3 Core Partner Cards with Project Images */
+.partnerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.partnerCard {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.partnerCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-blue);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.logoContainer {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.partnerLogoImg {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.partnerBadge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.partnerCardContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.partnerTitle {
+  font-size: 21px;
+  font-weight: 750;
+  color: #111827;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.partnerDesc {
+  font-size: 14.5px;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+  .partnerGrid {
+    grid-template-columns: 1fr;
+  }
+}

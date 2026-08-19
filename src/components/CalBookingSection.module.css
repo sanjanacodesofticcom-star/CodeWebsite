@@ -1,0 +1,184 @@
+/* Cal.com Booking Section - Clean White Theme */
+.section {
+  background: #ffffff;
+  padding: 6rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.bookingBox {
+  background: #111827;
+  border-radius: 20px;
+  padding: 4.5rem 3rem;
+  color: #ffffff;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  align-self: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 16px;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.perksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
+}
+
+.perkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 14.5px;
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calBtn {
+  background: var(--brand-blue);
+  color: #ffffff;
+  border: 2px solid var(--brand-blue);
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.calBtn:hover {
+  background: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.emailLink {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.emailLink:hover {
+  color: #ffffff;
+}
+
+/* Right Column Card: Interactive Timezone & Calendar Preview */
+.previewCard {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1rem;
+}
+
+.calHost {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sessionDuration {
+  font-size: 12px;
+  color: var(--brand-blue);
+  font-weight: 700;
+  background: rgba(24, 140, 255, 0.15);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.previewBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slotItem {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: #cbd5e1;
+}
+
+.slotTime {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .bookingBox {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+  }
+}

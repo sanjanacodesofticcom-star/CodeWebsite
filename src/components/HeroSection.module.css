@@ -1,0 +1,61 @@
+/* Hero Section - Video Only Architecture */
+.heroContainer {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 2rem 0;
+}
+
+.videoFrameWrapper {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.videoCard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 78vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  background: #000000;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ambientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.15) 100%);
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .videoFrameWrapper {
+    padding: 1rem 1rem 0 1rem;
+  }
+  .videoCard {
+    border-radius: 14px;
+    aspect-ratio: 16 / 9;
+  }
+  .heroContainer {
+    padding-bottom: 1.5rem;
+  }
+}
