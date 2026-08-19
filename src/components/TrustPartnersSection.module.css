@@ -1,4 +1,4 @@
-/* Trust & Partners Section - Clean White Theme with Project File Logos */
+/* Trust & Partners Section - Clean Streamlined Partner Showcase */
 .partnerSection {
   background: #ffffff;
   padding: 4.5rem 0 4rem 0;
@@ -16,7 +16,7 @@
 .sectionHeader {
   text-align: center;
   max-width: 780px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2.75rem auto;
 }
 
 .eyebrow {
@@ -46,25 +46,26 @@
 .partnerGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 .partnerCard {
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
   border-radius: 20px;
-  padding: 2.25rem 2rem;
+  padding: 1.75rem 1.75rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
   transition: all var(--transition-normal);
   position: relative;
 }
 
 .partnerCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--brand-blue);
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.08);
   background: #ffffff;
 }
 
@@ -72,18 +73,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .logoContainer {
-  height: 56px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
 .partnerLogoImg {
-  max-height: 48px;
+  max-height: 44px;
   width: auto;
   object-fit: contain;
   object-position: left center;
@@ -105,21 +106,14 @@
 .partnerCardContent {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .partnerTitle {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 750;
   color: #111827;
-  margin-bottom: 0.75rem;
+  margin: 0;
   line-height: 1.3;
-}
-
-.partnerDesc {
-  font-size: 14.5px;
-  color: #4b5563;
-  line-height: 1.65;
 }
 
 @media (max-width: 1024px) {
