@@ -91,8 +91,8 @@ export default function Navbar() {
           <Image
             src="/images/Logo.svg"
             alt="Codesoftic Logo"
-            width={170}
-            height={22}
+            width={140}
+            height={18}
             className={styles.logoImg}
             priority
           />
