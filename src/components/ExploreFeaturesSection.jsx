@@ -114,8 +114,6 @@ export default function ExploreFeaturesSection() {
                   height={340}
                   priority={activeTab === 0}
                 />
-                <div className="cse-bubble cse-bubble--center">Auto-reply enabled</div>
-                <div className="cse-badge">3K messages handled</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -148,8 +146,6 @@ export default function ExploreFeaturesSection() {
                   width={600}
                   height={340}
                 />
-                <div className="cse-bubble cse-bubble--center">Broadcast scheduled</div>
-                <div className="cse-badge">42 workflows live</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -182,8 +178,6 @@ export default function ExploreFeaturesSection() {
                   width={600}
                   height={340}
                 />
-                <div className="cse-bubble cse-bubble--center">Live chat active</div>
-                <div className="cse-badge">98% response rate</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -216,8 +210,6 @@ export default function ExploreFeaturesSection() {
                   width={600}
                   height={340}
                 />
-                <div className="cse-bubble cse-bubble--center">Top performing segment</div>
-                <div className="cse-badge">1.2K conversions</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -250,8 +242,6 @@ export default function ExploreFeaturesSection() {
                   width={600}
                   height={340}
                 />
-                <div className="cse-bubble cse-bubble--center">Campaign sent</div>
-                <div className="cse-badge">64% open rate</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -284,8 +274,6 @@ export default function ExploreFeaturesSection() {
                   width={600}
                   height={340}
                 />
-                <div className="cse-bubble cse-bubble--center">Synced with CRM</div>
-                <div className="cse-badge">12 integrations</div>
               </div>
             </div>
             <aside className="cse-side-card">
@@ -304,16 +292,17 @@ export default function ExploreFeaturesSection() {
 
       <style jsx>{`
         /* ============ CSE — scoped to this section only ============ */
-        .cse-section {
-          background: #f5f5f5 !important;
-          padding: 56px 24px !important;
-          width: 100% !important;
-          border-top: 1px solid #e5e7eb;
-          border-bottom: 1px solid #e5e7eb;
+        .cse-wrapper {
+          background-color: #ffffff;
+          padding: 80px 0;
+          font-family: inherit;
+          color: #111827;
+          border-top: none;
+          border-bottom: none;
         }
 
         .cse-inner {
-          max-width: 1280px !important;
+          max-width: 1440px !important;
           margin: 0 auto !important;
         }
 

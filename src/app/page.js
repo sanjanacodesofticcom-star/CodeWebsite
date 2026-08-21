@@ -2,7 +2,9 @@ import HeroSection from '@/components/HeroSection';
 import TrustPartnersSection from '@/components/TrustPartnersSection';
 import AdobeChallengesSection from '@/components/AdobeChallengesSection';
 import ExploreFeaturesSection from '@/components/ExploreFeaturesSection';
+import PartnershipTiersSection from '@/components/PartnershipTiersSection';
 import SuccessStoriesSection from '@/components/SuccessStoriesSection';
+import IndustrySolutionsSection from '@/components/IndustrySolutionsSection';
 import ClientTestimonialsSection from '@/components/ClientTestimonialsSection';
 import CalBookingSection from '@/components/CalBookingSection';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -56,10 +58,16 @@ export default function HomePage() {
       {/* 4. EXPLORE ALL FEATURES TABBED PRODUCT SECTION */}
       <ExploreFeaturesSection />
 
-      {/* 5. SUCCESS STORIES / CASE STUDIES SECTION */}
+      {/* 5. STRATEGIC PARTNERSHIP ENGAGEMENT TIERS (Startups, Enterprises, B2B) */}
+      <PartnershipTiersSection />
+
+      {/* 6. SUCCESS STORIES / CASE STUDIES SECTION (Verified Client Outcomes) */}
       <SuccessStoriesSection />
 
-      {/* 6. WHAT OUR CLIENTS SAY (TESTIMONIALS SECTION) */}
+      {/* 6. INDUSTRY SOLUTIONS GRID (Accelerate Growth with Tailored IT Solutions) */}
+      <IndustrySolutionsSection />
+
+      {/* 7. WHAT OUR CLIENTS SAY (TESTIMONIALS SECTION) */}
       <ClientTestimonialsSection />
 
       {/* 7. FAQ SECTION */}

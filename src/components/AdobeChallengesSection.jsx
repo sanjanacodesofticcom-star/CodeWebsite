@@ -65,7 +65,7 @@ export default function AdobeChallengesSection() {
             </div>
             <div className={styles.accCardImgWrap}>
               <Image
-                src="/images/service-media-2.png"
+                src="/images/performance-marketing-scaled.png"
                 alt="Scale performance marketing"
                 width={400}
                 height={260}
@@ -87,7 +87,7 @@ export default function AdobeChallengesSection() {
             </div>
             <div className={styles.accCardImgWrap}>
               <Image
-                src="/images/service-media-1.png"
+                src="/images/ai-audits-modernized.png"
                 alt="Modernize with AI audits"
                 width={400}
                 height={260}

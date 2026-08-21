@@ -19,7 +19,7 @@
 }
 
 .accInner {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
 }
@@ -178,7 +178,7 @@
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: left top !important;
+  object-position: center center !important;
 }
 
 /* ============================================================

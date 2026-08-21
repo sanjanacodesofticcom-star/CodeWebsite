@@ -1,159 +1,224 @@
-/* Codesoftic Footer - Clean White Theme */
+/* Codesoftic Full Background Celestial Stairway Footer */
 .footer {
-  background: #f8fafc;
-  border-top: 1px solid #e5e7eb;
-  padding: 5rem 0 2rem 0;
   position: relative;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 5.5rem 0 3rem 0;
   overflow: hidden;
+  border-top: none;
 }
 
-.footerGlow {
+/* Full Background Image Layer (Image 1: Glowing Stairway & Azure Sky) */
+.bgImageLayer {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--brand-blue), transparent);
+  bottom: 0;
+  background-image: url('/images/footer-stairway-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-.footerGrid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
-  gap: 3rem;
-  margin-bottom: 4rem;
+/* Top Subtle Fog / Translucent Fade to ensure crystal clear readability of links */
+.topOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.90) 25%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.10) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
+.inner {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+/* Top Links Grid (Image 2 layout: Brand Left, 4 Columns Right) */
+.topGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Left Brand Column */
 .brandCol {
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.footerLogo {
-  height: 26px;
-  width: auto;
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
 }
 
-.brandBio {
-  font-size: 0.95rem;
-  color: #4b5563;
+.brandTagline {
+  font-size: 15px;
   line-height: 1.6;
-  max-width: 320px;
+  color: #334155;
+  margin: 0;
 }
 
+/* Social Icons Row */
 .socialRow {
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.85rem;
   margin-top: 0.5rem;
 }
 
-.socialBtn {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-sm);
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #cbd5e1;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b5563;
-  transition: all var(--transition-fast);
+  color: #334155;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.socialBtn:hover {
-  background: rgba(24, 140, 255, 0.1);
-  border-color: var(--brand-blue);
-  color: var(--brand-blue);
+.socialIcon:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-.colTitle {
-  font-size: 1rem;
+/* Right Navigation Columns */
+.navCols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(130px, 1fr));
+  gap: 2.5rem 3.5rem;
+}
+
+.colHeader {
+  font-size: 14.5px;
   font-weight: 700;
-  color: #111827;
+  color: #0f172a;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
 }
 
 .linkList {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .footerLink {
-  color: #4b5563;
-  font-size: 0.925rem;
+  font-size: 14px;
   font-weight: 500;
-  transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 .footerLink:hover {
-  color: var(--brand-blue);
-  transform: translateX(3px);
+  color: #0284c7;
+  transform: translateX(2px);
 }
 
-.newsletterDesc {
-  font-size: 0.9rem;
-  color: #4b5563;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+/* Center Copyright Line (Image 2 style) */
+.copyrightRow {
+  text-align: center;
+  margin-bottom: 3.5rem;
 }
 
-.newsletterForm {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.copyrightText {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: -0.01em;
 }
 
-.newsletterInput {
-  background: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
-  color: #111827;
-  font-size: 0.9rem;
-  outline: none;
-  transition: border-color var(--transition-fast);
-}
-
-.newsletterInput:focus {
-  border-color: var(--brand-blue);
-}
-
-.bottomBar {
-  padding-top: 2rem;
-  border-top: 1px solid #e5e7eb;
+/* Giant Bottom Logo SVG Container (Bigger Form) */
+.bigLogoWrapper {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  color: #6b7280;
-  font-size: 0.875rem;
+  justify-content: center;
+  padding: 2rem 0 1rem 0;
+  pointer-events: none;
+  user-select: none;
 }
 
-.bottomLinks {
-  display: flex;
-  gap: 1.5rem;
+.bigLogoSvg {
+  width: 92%;
+  max-width: 1200px;
+  height: auto;
+  filter: drop-shadow(0 15px 35px rgba(2, 132, 199, 0.4)) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.15));
+  opacity: 0.98;
 }
 
-@media (max-width: 1024px) {
-  .footerGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .footerGrid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .bottomBar {
+/* Responsive adjustments */
+@media (max-width: 1120px) {
+  .topGrid {
     flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    gap: 3.5rem;
+  }
+
+  .navCols {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .brandCol {
+    max-width: 100%;
+  }
+
+  .bigLogoSvg {
+    width: 96%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 0 2rem 0;
+  }
+
+  .navCols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+
+  .copyrightRow {
+    margin-bottom: 2rem;
+  }
+
+  .bigLogoSvg {
+    width: 98%;
   }
 }

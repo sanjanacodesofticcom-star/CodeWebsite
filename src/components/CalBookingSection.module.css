@@ -1,12 +1,13 @@
 /* Cal.com Booking Section - Clean White Theme */
-.section {
+.bookingSection {
   background: #ffffff;
-  padding: 6rem 0;
-  border-top: 1px solid #e5e7eb;
+  padding: 6.5rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .inner {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
