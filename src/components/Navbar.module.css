@@ -78,19 +78,25 @@
   color: var(--brand-blue);
 }
 
+.dropdownButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .chevronIcon {
   width: 15px;
   height: 15px;
-  transition: transform var(--transition-fast);
+  transition: transform 0.25s ease, color 0.2s ease;
 }
 
-.dropdownTrigger:hover .chevronIcon,
 .dropdownOpen .chevronIcon {
   transform: rotate(180deg);
   color: var(--brand-blue);
 }
 
-/* Services Mega Menu - White Theme */
+/* Services Mega Menu - Click to Hold & Toggle */
 .megaMenu {
   position: absolute;
   top: calc(100% + 12px);
@@ -105,11 +111,10 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   z-index: 100;
 }
 
-.dropdownTrigger:hover .megaMenu,
 .dropdownOpen .megaMenu {
   opacity: 1;
   visibility: visible;

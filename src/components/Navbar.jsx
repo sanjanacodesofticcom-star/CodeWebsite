@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -63,6 +63,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const servicesDropdownRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -82,6 +83,17 @@ export default function Navbar() {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
   }, [pathname]);
+
+  // Click outside to close Services dropdown
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} id="main-header">
@@ -118,25 +130,30 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Services Mega Dropdown */}
+          {/* Services Click-to-Hold Mega Dropdown */}
           <div 
-            className={`${styles.navItem} ${styles.dropdownTrigger}`}
-            onMouseEnter={() => setServicesDropdownOpen(true)}
-            onMouseLeave={() => setServicesDropdownOpen(false)}
+            ref={servicesDropdownRef}
+            className={`${styles.navItem} ${styles.dropdownTrigger} ${servicesDropdownOpen ? styles.dropdownOpen : ''}`}
           >
-            <Link 
-              href="/services" 
-              className={`${styles.navLink} ${pathname.startsWith('/services') ? styles.activeNavLink : ''}`}
+            <button 
+              type="button"
+              className={`${styles.navLink} ${styles.dropdownButton} ${pathname.startsWith('/services') ? styles.activeNavLink : ''}`}
+              onClick={() => setServicesDropdownOpen(prev => !prev)}
               aria-expanded={servicesDropdownOpen}
+              aria-haspopup="true"
             >
-              Services
+              <span>Services</span>
               <ChevronDown className={styles.chevronIcon} />
-            </Link>
+            </button>
 
             <div className={styles.megaMenu}>
               <div className={styles.megaMenuHeader}>
                 <span className={styles.megaMenuTitle}>Enterprise Capabilities & Services</span>
-                <Link href="/services" className={styles.viewAllServices}>
+                <Link 
+                  href="/services" 
+                  className={styles.viewAllServices}
+                  onClick={() => setServicesDropdownOpen(false)}
+                >
                   Explore All Capabilities <ArrowRight size={14} />
                 </Link>
               </div>
@@ -149,6 +166,7 @@ export default function Navbar() {
                       key={srv.href} 
                       href={srv.href}
                       className={styles.megaCard}
+                      onClick={() => setServicesDropdownOpen(false)}
                     >
                       <div className={styles.megaIconBox}>
                         <Icon size={18} />
