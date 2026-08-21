@@ -4,7 +4,6 @@ import AdobeChallengesSection from '@/components/AdobeChallengesSection';
 import ExploreFeaturesSection from '@/components/ExploreFeaturesSection';
 import PartnershipTiersSection from '@/components/PartnershipTiersSection';
 import SuccessStoriesSection from '@/components/SuccessStoriesSection';
-import IndustrySolutionsSection from '@/components/IndustrySolutionsSection';
 import ClientTestimonialsSection from '@/components/ClientTestimonialsSection';
 import CalBookingSection from '@/components/CalBookingSection';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -64,14 +63,11 @@ export default function HomePage() {
       {/* 6. SUCCESS STORIES / CASE STUDIES SECTION (Verified Client Outcomes) */}
       <SuccessStoriesSection />
 
-      {/* 6. INDUSTRY SOLUTIONS GRID (Accelerate Growth with Tailored IT Solutions) */}
-      <IndustrySolutionsSection />
-
       {/* 7. WHAT OUR CLIENTS SAY (TESTIMONIALS SECTION) */}
       <ClientTestimonialsSection />
 
-      {/* 7. FAQ SECTION */}
-      <section className="section" style={{ background: '#ffffff', borderTop: '1px solid #e5e7eb' }}>
+      {/* 8. FAQ SECTION */}
+      <section className="section" style={{ background: '#ffffff', borderTop: 'none' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem auto' }}>
             <span className="badge" style={{ marginBottom: '0.75rem' }}>Answers on Demand</span>
@@ -87,7 +83,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. CAL.COM DIRECT BOOKING SECTION */}
+      {/* 9. CAL.COM DIRECT BOOKING SECTION */}
       <CalBookingSection />
     </div>
   );
