@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48" height="42" fill="none">
-  <g transform="translate(6, 6)">
-    <g transform="translate(0, 3) scale(1.05)">
-      <circle cx="14" cy="14" r="14" fill="#25D366"/>
-      <path d="M21.5 19.3c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1s-1.3-.5-2.5-1.5c-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.5-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9c0 1.7 1.2 3.4 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.1-.3-.2-.6-.3z" fill="#FFFFFF"/>
-    </g>
-    <text x="40" y="20" font-family="'Adobe Clean', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="800" fill="#111827" letter-spacing="-0.02em">WhatsApp</text>
-    <text x="40" y="30.5" font-family="'Adobe Clean', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#4B5563" letter-spacing="0.08em">BUSINESS API PARTNER</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 48" height="42" fill="none">
+  <g transform="translate(6, 8)">
+    <!-- Official WhatsApp Chat Bubble with Phone Handset -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14 0C6.27 0 0 6.27 0 14c0 2.65.73 5.14 2 7.28L.68 26.65a1 1 0 001.21 1.21l5.37-1.32A13.9 13.9 0 0014 28c7.73 0 14-6.27 14-14S21.73 0 14 0z" fill="#25D366"/>
+    <!-- Phone handset -->
+    <path d="M20.65 17.5c-.32-.16-1.88-.93-2.17-1.04-.29-.11-.5-.16-.71.16-.21.32-.82 1.04-.98 1.25-.19.21-.38.24-.7.08s-1.37-.5-2.61-1.61c-.96-.86-1.61-1.92-1.8-2.25-.19-.32-.02-.5.14-.66.15-.14.32-.38.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.35-.26-.62-.53-.53-.71-.54h-.61c-.21 0-.56.08-.85.39-.29.32-1.11 1.09-1.11 2.65s1.14 3.08 1.3 3.29c.16.21 2.24 3.43 5.44 4.81.76.33 1.36.53 1.82.68.77.24 1.46.21 2.01.13.62-.09 1.88-.77 2.15-1.51.26-.74.26-1.38.19-1.51-.08-.13-.29-.21-.61-.37z" fill="#FFFFFF"/>
+    
+    <text x="38" y="19" font-family="'Adobe Clean', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#111827" letter-spacing="-0.02em">WhatsApp</text>
+    <text x="38" y="29.5" font-family="'Adobe Clean', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="700" fill="#6B7280" letter-spacing="0.08em">BUSINESS API PARTNER</text>
   </g>
 </svg>
