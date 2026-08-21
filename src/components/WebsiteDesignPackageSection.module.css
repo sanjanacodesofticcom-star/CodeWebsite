@@ -118,11 +118,13 @@
   stroke-width: 2.5;
 }
 
-/* Under Card Note & Consultation Button */
+/* Under Card Note & Consultation Button (Positioned on the Very Bottom) */
 .bottomNoteWrapper {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 5.5rem auto;
+  margin: 4.5rem auto 0 auto;
+  padding-top: 3.5rem;
+  border-top: 1px solid #f1f5f9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -166,10 +168,9 @@
   box-shadow: 0 6px 22px rgba(2, 132, 199, 0.4);
 }
 
-/* ================= IMAGE 2 STYLES ================= */
+/* ================= SCOPE, BILLING & BUILD STACK (IMAGE 2) ================= */
 .bottomScopeWrapper {
-  padding-top: 2.5rem;
-  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
 }
 
 .twoColGrid {

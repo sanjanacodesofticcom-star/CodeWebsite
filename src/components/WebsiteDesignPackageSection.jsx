@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Check, ArrowRight, ShieldCheck, Sparkles, MessageSquare, Zap } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import styles from './WebsiteDesignPackageSection.module.css';
 
 const CAL_LINK = "https://cal.com/codesoftic/collaboration-circle?user=codesoftic";
@@ -41,7 +41,7 @@ export default function WebsiteDesignPackageSection() {
   return (
     <section className={styles.section} id="package-scope">
       <div className={styles.container}>
-        {/* ================= TOP SECTION (IMAGE 1: PACKAGE CHECKLIST) ================= */}
+        {/* ================= 1. TOP HEADER ================= */}
         <div className={styles.header}>
           <p className={styles.eyebrow}>ONE FLAT PRICE. NOTHING LEFT OUT.</p>
           <h2 className={styles.title}>
@@ -52,7 +52,7 @@ export default function WebsiteDesignPackageSection() {
           </p>
         </div>
 
-        {/* Big White Included Package Card */}
+        {/* ================= 2. PACKAGE CHECKLIST CARD ================= */}
         <div className={styles.packageCard}>
           <div className={styles.itemsList}>
             {PACKAGE_ITEMS.map((item, idx) => (
@@ -70,26 +70,7 @@ export default function WebsiteDesignPackageSection() {
           </div>
         </div>
 
-        {/* Under Card Summary Note */}
-        <div className={styles.bottomNoteWrapper}>
-          <p className={styles.bottomNote}>
-            We've built stores for fashion, skincare, supplements, kids' wear, and accessories — whatever you sell, we can build it.
-          </p>
-          <p className={styles.bottomNoteSub}>
-            Elsewhere this means a designer, a developer, an SEO consultant, and a photographer — four separate people. Here it's one team, one price.
-          </p>
-          <a
-            href={CAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.consultationBtn}
-          >
-            <span>Get My Free Consultation</span>
-            <ArrowRight size={16} />
-          </a>
-        </div>
-
-        {/* ================= BOTTOM SECTION (IMAGE 2: SCOPE, BILLING & BUILD STACK) ================= */}
+        {/* ================= 3. SCOPE, BILLING & BUILD ARCHITECTURE (IMAGE 2) ================= */}
         <div className={styles.bottomScopeWrapper}>
           {/* Two-Column Grid: What we need / Billed separately */}
           <div className={styles.twoColGrid}>
@@ -149,6 +130,25 @@ export default function WebsiteDesignPackageSection() {
               Consult first
             </a>
           </div>
+        </div>
+
+        {/* ================= 4. BOTTOM SECTION NOTE & GET MY FREE CONSULTATION BUTTON ================= */}
+        <div className={styles.bottomNoteWrapper}>
+          <p className={styles.bottomNote}>
+            We've built stores for fashion, skincare, supplements, kids' wear, and accessories — whatever you sell, we can build it.
+          </p>
+          <p className={styles.bottomNoteSub}>
+            Elsewhere this means a designer, a developer, an SEO consultant, and a photographer — four separate people. Here it's one team, one price.
+          </p>
+          <a
+            href={CAL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.consultationBtn}
+          >
+            <span>Get My Free Consultation</span>
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
     </section>
