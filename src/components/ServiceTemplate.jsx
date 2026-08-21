@@ -13,6 +13,7 @@ export default function ServiceTemplate({
   techStack = [],
   impactStat = { value: '4.8x', label: 'Average Client ROI' },
   faqs = [],
+  children,
 }) {
   return (
     <div style={{ background: '#ffffff' }}>
@@ -169,6 +170,9 @@ export default function ServiceTemplate({
           </div>
         </section>
       )}
+
+      {/* Custom Nested Sections (e.g. Package & Scope Checklist) */}
+      {children}
 
       {/* Tech Stack & Ecosystem */}
       {techStack.length > 0 && (

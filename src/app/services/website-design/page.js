@@ -1,4 +1,5 @@
 import ServiceTemplate from '@/components/ServiceTemplate';
+import WebsiteDesignPackageSection from '@/components/WebsiteDesignPackageSection';
 
 export const metadata = {
   title: 'Website Design & Web Apps | Codesoftic',
@@ -71,6 +72,9 @@ export default function WebsiteDesignPage() {
           answer: 'Yes, 100%. You receive complete ownership of all repository code, assets, database schemas, and documentation with zero recurring proprietary vendor fees.',
         },
       ]}
-    />
+    >
+      {/* Scope, Package Checklist & Build Architecture (Image 1 & Image 2) */}
+      <WebsiteDesignPackageSection />
+    </ServiceTemplate>
   );
 }
