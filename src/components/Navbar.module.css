@@ -20,13 +20,15 @@
 }
 
 .navContainer {
-  max-width: var(--max-width);
+  max-width: 1540px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 0 0.85rem;
+  padding: 0 clamp(1rem, 2.5vw, 2.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .logoWrapper {
@@ -34,7 +36,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  margin-right: auto;
+  flex-shrink: 0;
 }
 
 .logoImg {
@@ -51,8 +53,9 @@
 .navMenu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: clamp(1rem, 1.75vw, 2rem);
   list-style: none;
+  margin: 0 auto 0 2rem;
 }
 
 .navItem {
@@ -196,11 +199,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .contactBtn {
   font-size: 0.9rem;
   padding: 0.6rem 1.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Mobile Toggle */
