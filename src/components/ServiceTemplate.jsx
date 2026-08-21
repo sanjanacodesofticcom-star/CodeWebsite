@@ -138,6 +138,9 @@ export default function ServiceTemplate({
         </div>
       </section>
 
+      {/* Custom Nested Sections (e.g. Package & Scope Checklist directly after Full-Spectrum Execution) */}
+      {children}
+
       {/* 4-Stage Methodology */}
       {methodology.length > 0 && (
         <section className="section" style={{ background: '#ffffff' }}>
@@ -170,9 +173,6 @@ export default function ServiceTemplate({
           </div>
         </section>
       )}
-
-      {/* Custom Nested Sections (e.g. Package & Scope Checklist) */}
-      {children}
 
       {/* Tech Stack & Ecosystem */}
       {techStack.length > 0 && (
