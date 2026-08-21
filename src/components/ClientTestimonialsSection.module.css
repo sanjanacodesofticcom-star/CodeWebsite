@@ -28,26 +28,27 @@
 }
 
 .eyebrow {
-  font-size: 12px;
+  display: inline-block;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 0.75rem;
+  color: #0284c7;
+  margin-bottom: 0.6rem;
 }
 
 .title {
   font-size: clamp(28px, 3.2vw, 44px);
-  font-weight: 800;
-  color: #111827;
+  font-weight: 850;
+  color: #0f172a;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin: 0;
 }
 
-.titleMuted {
-  color: #94a3b8;
-  font-weight: 700;
+.titleHighlight {
+  color: #0284c7;
+  display: inline-block;
 }
 
 /* Arrow Controls */

@@ -94,7 +94,7 @@ export default function ClientTestimonialsSection() {
           <div className={styles.headerLeft}>
             <span className={styles.eyebrow}>OUR REVIEWS</span>
             <h2 className={styles.title}>
-              What Our <span className={styles.titleMuted}>Clients</span> Say
+              What Our <span className={styles.titleHighlight}>Clients</span> Say
             </h2>
           </div>
 
