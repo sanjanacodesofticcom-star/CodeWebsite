@@ -44,9 +44,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer} id="main-footer">
-      <div className={styles.footerGlow} />
-
-      <div className="container">
+      <div className={styles.innerContainer}>
         <div className={styles.footerGrid}>
           {/* Brand Info */}
           <div className={styles.brandCol}>
