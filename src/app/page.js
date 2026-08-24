@@ -2,7 +2,6 @@ import HeroSection from '@/components/HeroSection';
 import TrustPartnersSection from '@/components/TrustPartnersSection';
 import AdobeChallengesSection from '@/components/AdobeChallengesSection';
 import StickyServicesSection from '@/components/StickyServicesSection';
-import ExploreFeaturesSection from '@/components/ExploreFeaturesSection';
 import PartnershipTiersSection from '@/components/PartnershipTiersSection';
 import SuccessStoriesSection from '@/components/SuccessStoriesSection';
 import ClientTestimonialsSection from '@/components/ClientTestimonialsSection';
@@ -44,11 +43,8 @@ export default function HomePage() {
       {/* 3. DIGITAL CHALLENGES SECTION (Address your biggest digital & growth challenges with Codesoftic) */}
       <AdobeChallengesSection />
 
-      {/* 4. STICKY STACKING SERVICES SECTION (4 Tiered Cards in Codesoftic Brand Palette) */}
+      {/* 4. STICKY STACKING SERVICES SECTION (6 Tiered Cards in Codesoftic Brand Palette) */}
       <StickyServicesSection />
-
-      {/* 5. EXPLORE ALL FEATURES TABBED PRODUCT SECTION */}
-      <ExploreFeaturesSection />
 
       {/* 5. STRATEGIC PARTNERSHIP ENGAGEMENT TIERS (Startups, Enterprises, B2B) */}
       <PartnershipTiersSection />
