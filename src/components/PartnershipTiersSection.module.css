@@ -1,8 +1,7 @@
-/* Strategic Partnership Section - Enhanced Modern Enterprise UI */
 .section {
   position: relative;
   background: #ffffff;
-  padding: 7rem 0;
+  padding: clamp(5.5rem, 8vw, 7.5rem) 0;
   border-top: none;
 }
 

@@ -292,9 +292,19 @@ export default function ExploreFeaturesSection() {
 
       <style jsx>{`
         /* ============ CSE — scoped to this section only ============ */
+        .cse-section {
+          width: 100%;
+          background-color: #ffffff;
+          padding: clamp(5.5rem, 8vw, 7.5rem) 1.5rem !important;
+          font-family: inherit;
+          color: #111827;
+          display: flex !important;
+          justify-content: center;
+        }
+
         .cse-wrapper {
           background-color: #ffffff;
-          padding: 80px 0;
+          padding: clamp(5.5rem, 8vw, 7.5rem) 0;
           font-family: inherit;
           color: #111827;
           border-top: none;

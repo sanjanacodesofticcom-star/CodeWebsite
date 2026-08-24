@@ -1,7 +1,6 @@
-/* Trust & Partners Section - Clean Streamlined Partner Logo Slider */
 .partnerSection {
   background: #ffffff;
-  padding: 4.5rem 0 4.5rem 0;
+  padding: clamp(4.5rem, 6.5vw, 6rem) 0;
   position: relative;
   overflow: hidden;
 }

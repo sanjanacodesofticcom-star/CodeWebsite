@@ -1,8 +1,7 @@
-/* Verified Client Outcomes Section - Clean Modern UI */
 .section {
   position: relative;
   background: #ffffff;
-  padding: 6.5rem 0;
+  padding: clamp(5.5rem, 8vw, 7.5rem) 0;
   overflow: hidden;
 }
 

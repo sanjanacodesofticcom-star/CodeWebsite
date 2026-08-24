@@ -1,8 +1,7 @@
-/* What Our Clients Say - Exact Slider Architecture */
 .section {
   position: relative;
   background: #ffffff;
-  padding: 6.5rem 0;
+  padding: clamp(5.5rem, 8vw, 7.5rem) 0;
   border-top: none;
   overflow: hidden;
 }
