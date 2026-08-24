@@ -12,7 +12,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Digital Experience Blueprint',
     badgeTitle: 'Next.js & Headless Architecture: Sub-Second Load & Conversion',
     visualGradient: 'linear-gradient(135deg, #000675 0%, #0044cc 50%, #00E7FF 100%)',
-    visualImage: '/images/service-media-1.png',
+    visualImage: '/images/service-website-design.png',
     links: [
       {
         label: 'Next.js & Headless Web Architecture Suite',
@@ -41,7 +41,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Diagnostic Assessment',
     badgeTitle: 'Enterprise AI Readiness & Security Roadmap Framework',
     visualGradient: 'linear-gradient(135deg, #04044A 0%, #000675 55%, #00E7FF 100%)',
-    visualImage: '/images/ai-audits-modernized.png',
+    visualImage: '/images/service-ai-audits.png',
     links: [
       {
         label: 'Enterprise Data Infrastructure & AI Readiness Audit',
@@ -70,7 +70,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Autonomous Orchestration',
     badgeTitle: 'Agentic Workflow Maturity Framework: Eliminate Operational Drag',
     visualGradient: 'linear-gradient(135deg, #000c40 0%, #0033aa 60%, #00E7FF 100%)',
-    visualImage: '/images/explore-ai-agents.png',
+    visualImage: '/images/service-ai-automation.png',
     links: [
       {
         label: 'Codesoftic Axis: Agentic Workflow Engine',
@@ -99,7 +99,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Organic Search Playbook',
     badgeTitle: 'Programmatic SEO & Technical Search Dominance Engine',
     visualGradient: 'linear-gradient(135deg, #020617 0%, #001254 60%, #00A4FF 100%)',
-    visualImage: '/images/explore-analytics.png',
+    visualImage: '/images/service-seo-dominance.png',
     links: [
       {
         label: 'Programmatic SEO Architecture & Knowledge Graphs',
@@ -128,7 +128,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Growth Engineering',
     badgeTitle: 'Algorithmic ROAS & Multi-Touch Attribution Engine',
     visualGradient: 'linear-gradient(135deg, #000675 0%, #0033aa 60%, #00E7FF 100%)',
-    visualImage: '/images/explore-campaigns.png',
+    visualImage: '/images/service-performance-marketing.png',
     links: [
       {
         label: 'Predictive Meta & Google Paid Media Infrastructure',
@@ -157,7 +157,7 @@ export const STICKY_SERVICES = [
     badgeTag: 'Venture Co-Build',
     badgeTitle: 'Zero-to-One Venture Blueprint: Rapid MVP to Institutional Capital',
     visualGradient: 'linear-gradient(135deg, #001254 0%, #002277 50%, #00E7FF 100%)',
-    visualImage: '/images/service-media-2.png',
+    visualImage: '/images/service-incubation.png',
     links: [
       {
         label: 'Codesoftic Incubation Centre & Venture Co-Build',
