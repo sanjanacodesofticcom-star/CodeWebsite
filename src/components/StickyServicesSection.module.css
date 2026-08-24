@@ -19,24 +19,41 @@
 
 /* -------- SECTION HEADER -------- */
 .headerBlock {
-  max-width: 860px;
   margin-bottom: clamp(3rem, 5vw, 4.5rem);
   text-align: left;
 }
 
-.badge {
-  display: inline-flex;
+.topRow {
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 13px;
-  font-weight: 750;
-  letter-spacing: 0.08em;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.sectionEyebrow {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--brand-blue, #0066ff);
-  background: rgba(0, 102, 255, 0.08);
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  margin-bottom: 1rem;
+}
+
+.exploreAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.exploreAllLink:hover {
+  color: var(--brand-blue, #0066ff);
+  transform: translateX(3px);
 }
 
 .sectionTitle {

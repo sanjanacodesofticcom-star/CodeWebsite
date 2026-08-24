@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Layers } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { STICKY_SERVICES } from '@/data/stickyServicesData';
 import styles from './StickyServicesSection.module.css';
 
@@ -25,27 +25,31 @@ export default function StickyServicesSection() {
   return (
     <section className={styles.sectionWrapper} id="services-stack">
       <div className={styles.container}>
-        {/* Section Header */}
+        {/* Section Header (Matching Enterprise Capabilities Header) */}
         <div className={styles.headerBlock}>
-          <div className={styles.badge}>
-            <Layers size={14} />
-            <span>End-to-End Capabilities</span>
+          <div className={styles.topRow}>
+            <span className={styles.sectionEyebrow}>ENTERPRISE CAPABILITIES & SERVICES</span>
+            <Link href="/services" className={styles.exploreAllLink}>
+              <span>Explore All Capabilities</span>
+              <ArrowRight size={15} />
+            </Link>
           </div>
+
           <h2 className={styles.sectionTitle}>
             Engineering Scalable Growth &{' '}
             <span className={styles.titleGradient}>Enterprise AI Systems</span>
           </h2>
           <p className={styles.sectionSubtitle}>
             From self-orchestrating autonomous agent pipelines to sub-second headless web
-            infrastructure and venture co-building, explore how Codesoftic accelerates modern
+            infrastructure, algorithmic SEO, and venture co-building, explore how Codesoftic accelerates modern
             enterprises.
           </p>
         </div>
 
-        {/* Sticky Stacking Cards */}
+        {/* Sticky Stacking Cards for All 6 Services */}
         <div className={styles.cardsStack}>
           {STICKY_SERVICES.map((service, index) => {
-            // Calculate progressive top offset for natural layered stacking
+            // Progressive top offset for natural layered stacking
             const topOffset = `calc(clamp(85px, 11vh, 120px) + ${index * 20}px)`;
 
             return (

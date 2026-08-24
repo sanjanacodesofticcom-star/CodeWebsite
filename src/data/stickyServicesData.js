@@ -1,105 +1,163 @@
 export const STICKY_SERVICES = [
   {
-    id: 'ai-workflows',
-    theme: 'light', // Light card (White surface, dark text, blue accents)
-    reverse: false, // Visual on Left, Content on Right (matching Image 1)
-    eyebrow: 'AI & AGENTIC ORCHESTRATION',
-    title: 'Engineering Autonomous AI Workflows & Multi-Agent Systems',
+    id: 'website-design',
+    theme: 'light', // Light card (White surface, Dark Royal text, Blue accents)
+    reverse: false, // Visual Left, Content Right (Image 1 style)
+    eyebrow: 'BESPOKE WEB ARCHITECTURE',
+    title: 'Website Design & High-Performance Web Platforms',
     description1:
-      'Most enterprise AI initiatives stall at isolated chatbots. Legacy workflows remain bottlenecked by repetitive manual handoffs, fragmented spreadsheets, and disconnected data silos.',
+      'High-conversion, bespoke UI/UX and web apps built on Next.js, Tailwind CSS, and headless architectures engineered to elevate enterprise brand authority.',
     description2:
-      'Codesoftic designs and deploys self-orchestrating multi-agent systems, continuous event-driven pipelines, and HIPAA/SOC-2 compliant autonomous workflows that execute end-to-end business operations in real time.',
-    badgeTag: 'Self-Assessment',
-    badgeTitle: 'Agentic Workflow Maturity Framework: Evaluate & Scale AI Operations',
+      'We eliminate sluggish load speeds, rigid legacy CMS constraints, and uninspiring layouts to deliver sub-second digital experiences that convert high-intent enterprise visitors.',
+    badgeTag: 'Digital Experience Blueprint',
+    badgeTitle: 'Next.js & Headless Architecture: Sub-Second Load & Conversion',
     visualGradient: 'linear-gradient(135deg, #000675 0%, #0044cc 50%, #00E7FF 100%)',
     visualImage: '/images/service-media-1.png',
-    links: [
-      {
-        label: 'Codesoftic Axis: Agentic Workflow Engine',
-        href: '/services/ai-automation',
-      },
-      {
-        label: 'Autonomous RPA & Data Pipeline Migrator',
-        href: '/services/ai-automation',
-      },
-      {
-        label: 'Enterprise AI Strategy: Turning Agents into Real Value',
-        href: '/services/ai-automation',
-      },
-    ],
-  },
-  {
-    id: 'web-platforms',
-    theme: 'navy', // Deep Navy / Royal Blue card (matching Image 2)
-    reverse: true, // Content on Left, Visual on Right (matching Image 2)
-    eyebrow: 'HIGH-PERFORMANCE ENGINEERING',
-    title: 'Architecting High-Performance Web & Headless Platforms',
-    description1:
-      'Legacy monolith websites suffer from bloated codebases, slow load times, and rigid CMS constraints that quietly degrade user trust and bleed high-value enterprise pipeline.',
-    description2:
-      'We architect sub-second headless Next.js platforms, enterprise Sanity CMS datasets, and fluid digital experiences engineered to maximize organic authority and qualified inbound conversions.',
-    badgeTag: 'Solution Blueprint',
-    badgeTitle: 'Headless Modernization Playbook: Sub-Second Load & Conversion Architecture',
-    visualGradient: 'linear-gradient(135deg, #04044A 0%, #001254 50%, #00A4FF 100%)',
-    visualImage: '/images/service-media-2.png',
     links: [
       {
         label: 'Next.js & Headless Web Architecture Suite',
         href: '/services/website-design',
       },
       {
-        label: 'Sanity Studio Dataset & API Integration',
+        label: 'Sanity Studio Dataset & Real-Time Content Hub',
         href: '/studio',
       },
       {
-        label: 'Core Web Vitals & Edge Conversion Optimization',
+        label: 'Core Web Vitals & Conversion Rate Optimization',
         href: '/services/website-design',
       },
     ],
   },
   {
-    id: 'growth-seo',
-    theme: 'royal', // Royal Blue Gradient card
-    reverse: false, // Visual on Left, Content on Right
-    eyebrow: 'TECHNICAL MARKETING & EXPANSION',
-    title: 'Algorithmic Performance Growth & Search Dominance',
+    id: 'ai-audits',
+    theme: 'navy', // Deep Navy (#04044A) with Neon Blue accents
+    reverse: true, // Content Left, Visual Right (Image 2 style)
+    eyebrow: 'DIAGNOSTIC & READINESS',
+    title: 'AI Audits, Data Infrastructure & LLM Roadmap',
     description1:
-      'Generic paid ad spending and surface-level SEO tactics yield diminishing returns in competitive markets without technical conversion tracking and algorithmic positioning.',
+      'Deep architecture assessments, data readiness evaluations, security protocols, and LLM roadmap strategy tailored for forward-thinking enterprise teams.',
     description2:
-      'Codesoftic combines programmatic SEO engines, technical attribution modeling, and high-velocity paid acquisition funnels to deliver predictable, compounding customer acquisition.',
-    badgeTag: 'Growth Framework',
-    badgeTitle: 'Organic Dominance Playbook: Programmatic Expansion at Scale',
+      'We audit legacy databases, identify high-ROI automation opportunities, benchmark compliance (HIPAA, SOC-2), and construct an actionable implementation roadmap before investing in custom development.',
+    badgeTag: 'Diagnostic Assessment',
+    badgeTitle: 'Enterprise AI Readiness & Security Roadmap Framework',
+    visualGradient: 'linear-gradient(135deg, #04044A 0%, #000675 55%, #00E7FF 100%)',
+    visualImage: '/images/ai-audits-modernized.png',
+    links: [
+      {
+        label: 'Enterprise Data Infrastructure & AI Readiness Audit',
+        href: '/services/ai-audits',
+      },
+      {
+        label: 'LLM Security, Privacy & Compliance Evaluation',
+        href: '/services/ai-audits',
+      },
+      {
+        label: 'AI ROI Benchmarking & Strategic Roadmap Sprint',
+        href: '/services/ai-audits',
+      },
+    ],
+  },
+  {
+    id: 'ai-automation',
+    theme: 'royal', // Royal Blue Gradient (#000c40 -> #0052cc)
+    reverse: false, // Visual Left, Content Right
+    eyebrow: 'AUTONOMOUS ORCHESTRATION',
+    title: 'AI Automation, Multi-Agent Systems & Custom LLMs',
+    description1:
+      'Autonomous agentic workflows, custom LLM pipelines, and enterprise robotic process automation (RPA) designed to eliminate operational drag.',
+    description2:
+      'Replace manual handoffs with self-orchestrating multi-agent networks that extract unstructured documents, triage support tickets, automate RCM follow-ups, and trigger real-time ERP updates.',
+    badgeTag: 'Autonomous Orchestration',
+    badgeTitle: 'Agentic Workflow Maturity Framework: Eliminate Operational Drag',
+    visualGradient: 'linear-gradient(135deg, #000c40 0%, #0033aa 60%, #00E7FF 100%)',
+    visualImage: '/images/explore-ai-agents.png',
+    links: [
+      {
+        label: 'Codesoftic Axis: Agentic Workflow Engine',
+        href: '/services/ai-automation',
+      },
+      {
+        label: 'Custom LLM Pipelines & Autonomous RPA Bots',
+        href: '/services/ai-automation',
+      },
+      {
+        label: 'Event-Driven Data Integrations & Webhooks',
+        href: '/services/ai-automation',
+      },
+    ],
+  },
+  {
+    id: 'seo-dominance',
+    theme: 'obsidian', // Obsidian (#020617) with Sky Blue (#00A4FF)
+    reverse: true, // Content Left, Visual Right
+    eyebrow: 'TECHNICAL SEARCH ENGINE',
+    title: 'SEO, Technical Search & AI Content Dominance',
+    description1:
+      'Technical SEO, AI-powered content engines, structured data schemas, and organic authority acceleration engineered for compound market visibility.',
+    description2:
+      'We engineer programmatic landing page systems, authoritative entity structures, and technical schema optimizations that capture high-intent organic search demand at compound scale.',
+    badgeTag: 'Organic Search Playbook',
+    badgeTitle: 'Programmatic SEO & Technical Search Dominance Engine',
+    visualGradient: 'linear-gradient(135deg, #020617 0%, #001254 60%, #00A4FF 100%)',
+    visualImage: '/images/explore-analytics.png',
+    links: [
+      {
+        label: 'Programmatic SEO Architecture & Knowledge Graphs',
+        href: '/services/performance-marketing',
+      },
+      {
+        label: 'AI-Assisted Editorial & Technical Content Pipelines',
+        href: '/services/performance-marketing',
+      },
+      {
+        label: 'Algorithmic Search Visibility & Core Web Vitals',
+        href: '/services/performance-marketing',
+      },
+    ],
+  },
+  {
+    id: 'performance-marketing',
+    theme: 'navy', // Navy (#04044A) with Royal & Neon accents
+    reverse: false, // Visual Left, Content Right
+    eyebrow: 'GROWTH ENGINEERING & ATTRIBUTION',
+    title: 'Performance Marketing & Algorithmic ROAS Scaling',
+    description1:
+      'Data-driven paid media, hyper-targeted campaigns, attribution modeling, and algorithmic ROAS scaling designed for high-velocity revenue expansion.',
+    description2:
+      'Maximize return on ad spend across Meta, Google Ads, and LinkedIn with predictive conversion tracking, high-converting offer funnels, and real-time creative iteration.',
+    badgeTag: 'Growth Engineering',
+    badgeTitle: 'Algorithmic ROAS & Multi-Touch Attribution Engine',
     visualGradient: 'linear-gradient(135deg, #000675 0%, #0033aa 60%, #00E7FF 100%)',
     visualImage: '/images/explore-campaigns.png',
     links: [
       {
-        label: 'Programmatic SEO & Technical Search Engine',
+        label: 'Predictive Meta & Google Paid Media Infrastructure',
         href: '/services/performance-marketing',
       },
       {
-        label: 'High-Intent Paid Acquisition & Funnel Engineering',
+        label: 'Multi-Touch Attribution & Full-Funnel Tracking',
         href: '/services/performance-marketing',
       },
       {
-        label: 'Multi-Touch Attribution & Conversion Modeling',
+        label: 'High-Converting Funnel Architecture & CRO Sprints',
         href: '/services/performance-marketing',
       },
     ],
   },
   {
     id: 'venture-incubation',
-    theme: 'obsidian', // Obsidian & Neon Blue accent card
-    reverse: true, // Content on Left, Visual on Right
-    eyebrow: 'VENTURE ENGINEERING & INCUBATION',
-    title: 'Incubation Centre: From Zero to Scaled Enterprise Venture',
+    theme: 'royal', // Royal Blue Gradient with Cyan/Neon highlights
+    reverse: true, // Content Left, Visual Right
+    eyebrow: 'VENTURE CO-BUILD & INCUBATION',
+    title: 'Incubation Centre: Zero to Scaled Enterprise Venture',
     description1:
-      'Early-stage ventures and corporate spinouts often spend months searching for technical co-founders or burning capital on agencies that deliver non-scalable MVPs.',
+      'Direct technical execution, AI architecture, UI/UX prototyping, dedicated engineering talent, and venture capital network access for ambitious founders.',
     description2:
-      'Our Incubation Centre partners directly with founders to deliver production-ready software prototypes, venture-grade UI/UX, and AI architecture within 4 to 8 weeks to unlock Series A funding.',
-    badgeTag: 'Venture Incubation',
+      'Our Incubation Centre partners with founders to deliver production-grade MVPs in 4 to 8 weeks, helping early-stage ventures validate product-market fit and secure investor backing.',
+    badgeTag: 'Venture Co-Build',
     badgeTitle: 'Zero-to-One Venture Blueprint: Rapid MVP to Institutional Capital',
-    visualGradient: 'linear-gradient(135deg, #04044A 0%, #001f7a 55%, #00E7FF 100%)',
-    visualImage: '/images/explore-ai-agents.png',
+    visualGradient: 'linear-gradient(135deg, #001254 0%, #002277 50%, #00E7FF 100%)',
+    visualImage: '/images/service-media-2.png',
     links: [
       {
         label: 'Codesoftic Incubation Centre & Venture Co-Build',
