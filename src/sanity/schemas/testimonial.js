@@ -1,77 +1,48 @@
 /**
  * Sanity Schema for "OUR REVIEWS" (Testimonials) Section
- * 4 Core Parameters:
- * 1. logo (Image) - Company Logo / Brand mark
- * 2. testimonialText (Text) - The review quote statement
- * 3. userName (String) - Client / User's Name
- * 4. companyName (String) - Company Name
+ * 4 Parameters:
+ * 1. Logo (logo)
+ * 2. Testimonial Text (testimonialText)
+ * 3. User Name (userName)
+ * 4. Company Name (companyName)
  */
 
 export const testimonialSchema = {
   name: 'testimonial',
-  title: 'Client Review / Testimonial',
+  title: 'OUR REVIEWS',
   type: 'document',
   fields: [
     {
       name: 'logo',
-      title: 'Company Logo',
+      title: 'Logo',
       type: 'image',
-      description: 'Logo or brand icon of the client company',
+      description: 'Upload the company or client logo',
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Logo is required'),
     },
     {
       name: 'testimonialText',
       title: 'Testimonial Text',
       type: 'text',
       rows: 4,
-      description: 'The quote or feedback given by the client',
-      validation: (Rule) => Rule.required().min(10).max(500),
+      description: 'Enter the testimonial / client quote text',
+      validation: (Rule) => Rule.required().min(5).error('Testimonial text is required'),
     },
     {
       name: 'userName',
       title: 'User Name',
       type: 'string',
-      description: 'Full name of the person giving the review',
-      validation: (Rule) => Rule.required(),
+      description: 'Enter the reviewer / client name',
+      validation: (Rule) => Rule.required().error('User name is required'),
     },
     {
       name: 'companyName',
       title: 'Company Name',
       type: 'string',
-      description: 'Name of the client company or organization',
-      validation: (Rule) => Rule.required(),
-    },
-    // Optional helper fields for enriched cards
-    {
-      name: 'userRole',
-      title: 'User Role / Title',
-      type: 'string',
-      description: 'e.g. CTO, Product Manager, VP of Engineering',
-    },
-    {
-      name: 'userLocation',
-      title: 'User Location',
-      type: 'string',
-      description: 'e.g. New York City, NY or London, UK',
-    },
-    {
-      name: 'userAvatar',
-      title: 'User Profile Photo (Avatar)',
-      type: 'image',
-      description: 'Profile photo of the user',
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: 'order',
-      title: 'Display Order',
-      type: 'number',
-      description: 'Order priority in the slider (e.g. 1, 2, 3...)',
-      initialValue: 0,
+      description: 'Enter the company name',
+      validation: (Rule) => Rule.required().error('Company name is required'),
     },
   ],
   preview: {
