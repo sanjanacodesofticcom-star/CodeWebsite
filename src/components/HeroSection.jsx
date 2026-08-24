@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import NeatGradientCanvas from './NeatGradientCanvas';
 import { HERO_SLIDES } from '@/data/heroSlidesData';
 import styles from './HeroSection.module.css';
 
-const SLIDE_DURATION = 7500; // 7.5 seconds per slide
+// Increased speed: 4.5 seconds per slide transition
+const SLIDE_DURATION = 4500;
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,10 +16,6 @@ export default function HeroSection() {
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
   }, []);
 
   const goToSlide = (index) => {
@@ -39,36 +36,38 @@ export default function HeroSection() {
 
   return (
     <section className={styles.heroWrapper} id="hero">
-      <div className={styles.container}>
-        {/* Top Header: Shaping Tomorrow with AI Today */}
+      {/* Top Header: Left-Aligned Transforming Today. Shaping Tomorrow with AI */}
+      <div className={styles.topContainer}>
         <div className={styles.headerBlock}>
           <h1 className={styles.mainHeading}>
-            <span className={styles.headingTop}>Shaping Tomorrow</span>
+            <span className={styles.headingTop}>Transforming Today.</span>
             <span className={styles.headingGradient}>
-              with AI Today<sup className={styles.trademark}>™</sup>
+              Shaping Tomorrow with AI
             </span>
           </h1>
         </div>
+      </div>
 
-        {/* 4-Slide Interactive WebGL Widthwise Slider */}
-        <div
-          className={styles.sliderCard}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Animated 3D WebGL Gradient Background Canvas */}
-          <div className={styles.canvasLayer}>
-            <NeatGradientCanvas
-              key={`canvas-slide-${currentSlide}`}
-              config={activeSlideData.config}
-              id={`hero-gradient-${currentSlide}`}
-            />
-          </div>
+      {/* 4-Slide Interactive WebGL Full-Width Slider */}
+      <div
+        className={styles.fullWidthSlider}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Animated 3D WebGL Gradient Background Canvas */}
+        <div className={styles.canvasLayer}>
+          <NeatGradientCanvas
+            key={`canvas-slide-${currentSlide}`}
+            config={activeSlideData.config}
+            id={`hero-gradient-${currentSlide}`}
+          />
+        </div>
 
-          {/* Dark Overlay for Text Readability */}
-          <div className={styles.darkOverlay} />
+        {/* Dark Overlay for High Contrast Text Readability */}
+        <div className={styles.darkOverlay} />
 
-          {/* Slide Text Content with Slow Reveal Animation */}
+        {/* Left-Aligned Slide Text Content with Slow Reveal Animation */}
+        <div className={styles.sliderInner}>
           <div className={styles.contentWrap} key={`content-slide-${currentSlide}`}>
             <span className={styles.slideEyebrow}>{activeSlideData.eyebrow}</span>
             <h2 className={styles.slideTitle}>{activeSlideData.title}</h2>
@@ -79,42 +78,39 @@ export default function HeroSection() {
               <ArrowRight size={16} />
             </Link>
           </div>
+        </div>
 
-          {/* Bottom 4-Segment Progress Bar */}
-          <div className={styles.progressNav}>
-            {HERO_SLIDES.map((slide, idx) => {
-              const isActive = currentSlide === idx;
-              const isCompleted = currentSlide > idx;
+        {/* Bottom 4-Segment Progress Bar */}
+        <div className={styles.progressNav}>
+          {HERO_SLIDES.map((slide, idx) => {
+            const isActive = currentSlide === idx;
+            const isCompleted = currentSlide > idx;
 
-              return (
+            return (
+              <div
+                key={slide.id}
+                className={`${styles.progressSegment} ${
+                  isActive ? styles.active : ''
+                } ${isCompleted ? styles.completed : ''}`}
+                onClick={() => goToSlide(idx)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Go to slide ${idx + 1}: ${slide.title}`}
+              >
                 <div
-                  key={slide.id}
-                  className={`${styles.progressSegment} ${
-                    isActive ? styles.active : ''
-                  } ${isCompleted ? styles.completed : ''}`}
-                  onClick={() => goToSlide(idx)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Go to slide ${idx + 1}: ${slide.title}`}
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                >
-                  <div
-                    className={styles.progressBarFill}
-                    style={
-                      isActive
-                        ? {
-                            animationDuration: `${SLIDE_DURATION}ms`,
-                            animationPlayState: isPaused ? 'paused' : 'running',
-                          }
-                        : undefined
-                    }
-                  />
-                </div>
-              );
-            })}
-          </div>
+                  className={styles.progressBarFill}
+                  style={
+                    isActive
+                      ? {
+                          animationDuration: `${SLIDE_DURATION}ms`,
+                          animationPlayState: isPaused ? 'paused' : 'running',
+                        }
+                      : undefined
+                  }
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,47 +1,48 @@
 /* ============================================================
-   Hero Section — Shaping Tomorrow with AI Today + 4 WebGL Slides
+   Hero Section — Transforming Today. Shaping Tomorrow with AI
+   Full-Width 4-Slide Animated WebGL Slider
    ============================================================ */
 
 .heroWrapper {
   position: relative;
   width: 100%;
   background: #ffffff;
-  padding: clamp(2.5rem, 4vw, 4rem) 0 clamp(4.5rem, 6.5vw, 6rem) 0;
+  padding: clamp(2.5rem, 4vw, 3.75rem) 0 0 0;
   overflow: hidden;
 }
 
-.container {
+.topContainer {
   max-width: var(--max-width, 1440px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   width: 100%;
 }
 
-/* -------- TOP HEADER (Shaping Tomorrow with AI Today) -------- */
+/* -------- TOP HEADER (Left-Aligned) -------- */
 .headerBlock {
-  text-align: center;
-  margin-bottom: clamp(2.5rem, 4vw, 3.75rem);
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
+  margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  max-width: 100%;
 }
 
 .mainHeading {
-  font-size: clamp(38px, 5.5vw, 68px);
+  font-size: clamp(36px, 4.8vw, 64px);
   font-weight: 850;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.035em;
   color: #0f172a;
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .headingTop {
   display: block;
   color: #000000;
+  margin-bottom: 0.15rem;
 }
 
 .headingGradient {
@@ -61,25 +62,17 @@
   text-fill-color: transparent;
 }
 
-.trademark {
-  font-size: 0.45em;
-  font-weight: 700;
-  vertical-align: super;
-  margin-left: 0.15em;
-  -webkit-text-fill-color: #0284c7;
-}
-
-/* -------- SLIDER FRAME -------- */
-.sliderCard {
+/* -------- FULL-WIDTH 100% SLIDER FRAME -------- */
+.fullWidthSlider {
   position: relative;
-  width: 100%;
-  height: 600px;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.25), 0 0 1px 1px rgba(0, 0, 0, 0.08);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  height: clamp(520px, 46vw, 660px);
   background: #000000;
+  overflow: hidden;
   display: flex;
   align-items: center;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
 }
 
 /* Canvas Background Layer */
@@ -95,7 +88,7 @@
   z-index: 1;
 }
 
-/* Subtle Vignette & Contrast Overlay */
+/* Contrast Overlay */
 .darkOverlay {
   position: absolute;
   top: 0;
@@ -104,23 +97,33 @@
   bottom: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.65) 0%,
-    rgba(0, 0, 0, 0.4) 45%,
-    rgba(0, 0, 0, 0.1) 80%,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.48) 45%,
+    rgba(0, 0, 0, 0.12) 80%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 2;
 }
 
-/* Foreground Content */
-.contentWrap {
+/* Slider Inner Container (Max-Width Aligned to Site Layout) */
+.sliderInner {
   position: relative;
   z-index: 3;
   width: 100%;
+  max-width: var(--max-width, 1440px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Left-Aligned Foreground Content */
+.contentWrap {
+  width: 100%;
   max-width: 680px;
-  padding: 0 4rem;
   color: #ffffff;
+  text-align: left;
 }
 
 /* Animated Content Text Elements */
@@ -129,10 +132,10 @@
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.82);
   margin-bottom: 0.85rem;
   display: inline-block;
-  animation: slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: slideFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .slideTitle {
@@ -142,19 +145,19 @@
   letter-spacing: -0.025em;
   color: #ffffff;
   margin: 0 0 1.25rem 0;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  animation: slideFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  animation: slideFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.08s forwards;
   opacity: 0;
 }
 
 .slideDesc {
-  font-size: clamp(16px, 1.2vw, 18.5px);
+  font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.92);
   margin: 0 0 2rem 0;
   max-width: 580px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  animation: slideFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  animation: slideFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
   opacity: 0;
 }
 
@@ -163,7 +166,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 2.25rem;
   border-radius: 999px;
   font-size: 15px;
   font-weight: 700;
@@ -171,12 +174,12 @@
   background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  animation: slideFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: slideFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
   opacity: 0;
 }
 
@@ -185,14 +188,14 @@
   color: #0f172a;
   border-color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
 }
 
 /* Keyframe for Slow Elegant Text Reveal */
 @keyframes slideFadeUp {
   0% {
     opacity: 0;
-    transform: translateY(22px);
+    transform: translateY(18px);
   }
   100% {
     opacity: 1;
@@ -200,16 +203,20 @@
   }
 }
 
-/* -------- BOTTOM SEGMENTED PROGRESS BARS -------- */
+/* -------- BOTTOM SEGMENTED PROGRESS BARS (Full-Width Aligned) -------- */
 .progressNav {
   position: absolute;
   bottom: 2.25rem;
-  left: 4rem;
-  right: 4rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: var(--max-width, 1440px);
+  margin: 0 auto;
+  padding: 0 2rem;
   z-index: 4;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .progressSegment {
@@ -223,7 +230,7 @@
 }
 
 .progressSegment:hover {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.48);
 }
 
 .progressBarFill {
@@ -234,7 +241,7 @@
   width: 0%;
   background: #ffffff;
   border-radius: 999px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.85);
 }
 
 .progressSegment.active .progressBarFill {
@@ -254,75 +261,44 @@
   width: 100%;
 }
 
-/* -------- NAV ARROW BUTTONS -------- */
-.arrowNav {
-  position: absolute;
-  right: 3rem;
-  bottom: 2rem;
-  z-index: 4;
-  display: flex;
-  gap: 0.75rem;
-}
-
-.sliderArrowBtn {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.sliderArrowBtn:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: scale(1.05);
-}
-
 /* -------- RESPONSIVE BREAKPOINTS -------- */
 @media (max-width: 1024px) {
-  .sliderCard {
-    height: 540px;
+  .fullWidthSlider {
+    height: 520px;
   }
   .contentWrap {
-    padding: 0 2.5rem;
-    max-width: 580px;
+    max-width: 540px;
   }
   .progressNav {
-    left: 2.5rem;
-    right: 2.5rem;
     bottom: 1.75rem;
-    gap: 0.85rem;
+    gap: 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .sliderCard {
-    height: 500px;
-    border-radius: 18px;
+  .topContainer {
+    padding: 0 1.25rem;
   }
-  .contentWrap {
-    padding: 0 1.5rem;
-    max-width: 100%;
+  .sliderInner {
+    padding: 0 1.25rem;
   }
   .progressNav {
-    left: 1.5rem;
-    right: 1.5rem;
+    padding: 0 1.25rem;
     bottom: 1.25rem;
     gap: 0.5rem;
+  }
+  .fullWidthSlider {
+    height: 480px;
   }
   .slideTitle {
     font-size: 28px;
     margin-bottom: 0.85rem;
   }
   .slideDesc {
-    font-size: 15px;
+    font-size: 14.5px;
     margin-bottom: 1.5rem;
+  }
+  .mainHeading {
+    font-size: 32px;
   }
 }
