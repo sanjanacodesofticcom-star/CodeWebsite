@@ -201,6 +201,33 @@
   line-height: 1.4;
 }
 
+.subCatRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.subCatPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(0, 102, 255, 0.08);
+  color: #0066ff;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.subCatPill:hover {
+  background: #0066ff;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 .navActions {
   justify-self: end;
   display: inline-flex;

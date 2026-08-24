@@ -28,6 +28,12 @@ const SERVICES_LIST = [
     href: '/services/website-design',
     icon: Layout,
     badge: 'Popular',
+    subCategories: [
+      { name: 'Shopify', href: '/services/website-design/shopify' },
+      { name: 'WordPress', href: '/services/website-design/wordpress' },
+      { name: 'Next.js', href: '/services/website-design/nextjs' },
+      { name: 'Customized', href: '/services/website-design/custom' },
+    ],
   },
   {
     title: 'AI Audits',
@@ -166,22 +172,42 @@ export default function Navbar() {
                 {SERVICES_LIST.map((srv) => {
                   const Icon = srv.icon;
                   return (
-                    <Link 
-                      key={srv.href} 
-                      href={srv.href}
-                      className={styles.megaCard}
-                      onClick={() => setServicesDropdownOpen(false)}
-                    >
+                    <div key={srv.href} className={styles.megaCard}>
                       <div className={styles.megaIconBox}>
                         <Icon size={18} />
                       </div>
-                      <div>
-                        <div className={styles.megaCardTitle}>
+                      <div style={{ flex: 1 }}>
+                        <Link 
+                          href={srv.href}
+                          className={styles.megaCardTitle}
+                          style={{ display: 'inline-block', textDecoration: 'none' }}
+                          onClick={() => setServicesDropdownOpen(false)}
+                        >
                           {srv.title}
-                        </div>
+                        </Link>
                         <p className={styles.megaCardDesc}>{srv.desc}</p>
+
+                        {/* Sub-categories (Shopify, WordPress, Next.js, Custom) */}
+                        {srv.subCategories && (
+                          <div className={styles.subCatRow}>
+                            {srv.subCategories.map((sub) => (
+                              <Link
+                                key={sub.href}
+                                href={sub.href}
+                                className={styles.subCatPill}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setServicesDropdownOpen(false);
+                                }}
+                              >
+                                <span>{sub.name}</span>
+                                <ArrowRight size={10} />
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
               </div>
@@ -199,10 +225,10 @@ export default function Navbar() {
 
           <div className={styles.navItem}>
             <Link 
-              href="/resources" 
-              className={`${styles.navLink} ${pathname === '/resources' ? styles.activeNavLink : ''}`}
+              href="/case-studies" 
+              className={`${styles.navLink} ${pathname.startsWith('/case-studies') ? styles.activeNavLink : ''}`}
             >
-              Resources
+              Case Studies
             </Link>
           </div>
 
@@ -211,29 +237,37 @@ export default function Navbar() {
               href="/contact" 
               className={`${styles.navLink} ${pathname === '/contact' ? styles.activeNavLink : ''}`}
             >
-              Contact Us
+              Contact
             </Link>
           </div>
         </nav>
 
-        {/* Action Button & Mobile Toggle */}
+        {/* CTA Buttons */}
         <div className={styles.navActions}>
+          <Link href="/contact" className={`btn btn-secondary ${styles.contactBtn}`}>
+            <span>Brief Project</span>
+          </Link>
+
           <a 
             href={CAL_LINK} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className={`btn btn-primary ${styles.contactBtn}`}
+            className="btn btn-primary"
+            style={{ fontSize: '0.9rem', padding: '0.6rem 1.25rem' }}
           >
             <Calendar size={15} />
-            <span>Book Call</span>
+            <span>Book Consultation</span>
           </a>
 
+          {/* Mobile Hamburger Toggle */}
           <button 
+            type="button" 
             className={styles.mobileToggle}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
@@ -251,7 +285,7 @@ export default function Navbar() {
           <div 
             className={styles.mobileNavLink}
             onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
           >
             <span>Services</span>
             <ChevronDown 
@@ -268,10 +302,33 @@ export default function Navbar() {
                 </Link>
               </li>
               {SERVICES_LIST.map((srv) => (
-                <li key={srv.href}>
-                  <Link href={srv.href} className={styles.mobileSubLink}>
+                <li key={srv.href} style={{ marginBottom: '0.75rem' }}>
+                  <Link href={srv.href} className={styles.mobileSubLink} style={{ fontWeight: 650 }}>
                     {srv.title}
                   </Link>
+
+                  {/* Mobile Sub-categories */}
+                  {srv.subCategories && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', paddingLeft: '1rem', marginTop: '0.35rem' }}>
+                      {srv.subCategories.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          style={{
+                            fontSize: '0.75rem',
+                            fontWeight: 650,
+                            padding: '0.2rem 0.5rem',
+                            borderRadius: '999px',
+                            background: 'rgba(0, 102, 255, 0.08)',
+                            color: '#0066ff',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          {sub.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -281,8 +338,8 @@ export default function Navbar() {
         <Link href="/incubation-centre" className={styles.mobileNavLink}>
           Incubation Centre
         </Link>
-        <Link href="/resources" className={styles.mobileNavLink}>
-          Resources
+        <Link href="/case-studies" className={styles.mobileNavLink}>
+          Case Studies
         </Link>
         <Link href="/contact" className={styles.mobileNavLink}>
           Contact Us
