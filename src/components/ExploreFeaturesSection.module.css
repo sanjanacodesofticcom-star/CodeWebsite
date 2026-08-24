@@ -1,0 +1,302 @@
+/* ============================================================
+   Explore All Solutions Tabbed Section - Scoped Module CSS
+   ============================================================ */
+
+.section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: clamp(6.5rem, 9vw, 8.5rem) 1.5rem;
+  color: #111827;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Heading & Subheading */
+.heading {
+  font-size: clamp(26px, 2.8vw, 40px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  text-align: center;
+  margin: 0 0 14px 0;
+}
+
+.subheading {
+  font-size: clamp(15.5px, 1.1vw, 17.5px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: #475569;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 28px auto;
+}
+
+.ctaWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+/* Pill button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border-radius: 999px;
+  background: transparent;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+  border: 2px solid #0f172a;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 6px;
+  max-width: 100%;
+  width: fit-content;
+  margin: 0 auto 36px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tab {
+  appearance: none;
+  background: transparent;
+  border: 1.5px solid transparent;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 650;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  scroll-snap-align: center;
+  transition: all 0.2s ease;
+}
+
+.tab.isActive {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.tab:not(.isActive):hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Panels */
+.panels {
+  width: 100%;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.isActive {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Main Left Card */
+.mainCard {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  min-height: 360px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
+}
+
+.textHalf {
+  flex: 0 0 42%;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #0f172a;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+}
+
+.cardDesc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0 0 24px 0;
+  flex: 1;
+}
+
+.learnLink {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.learnLink:hover {
+  color: #0369a1;
+  gap: 9px;
+}
+
+.mediaHalf {
+  flex: 1 1 58%;
+  background: #f1f5f9;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Side Card (Right) */
+.sideCard {
+  background: #f8fafc;
+  border-radius: 18px;
+  padding: 32px 28px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sideHeading {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.sideList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sideList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  color: #334155;
+  font-weight: 550;
+}
+
+.sideList a {
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sideList a:hover {
+  color: #0284c7;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284c7;
+  flex-shrink: 0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .panel.isActive {
+    grid-template-columns: 1fr;
+  }
+  .mainCard {
+    height: auto;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 6px;
+    border-radius: 12px;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .mainCard {
+    flex-direction: column;
+    height: auto;
+  }
+  .textHalf {
+    flex: 1 1 auto;
+    padding: 24px;
+  }
+  .mediaHalf {
+    height: 220px;
+  }
+  .sideCard {
+    padding: 24px;
+  }
+}
