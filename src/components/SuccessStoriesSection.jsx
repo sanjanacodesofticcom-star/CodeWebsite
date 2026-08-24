@@ -1,121 +1,136 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { CASE_STUDIES } from '@/data/caseStudies';
+import { ArrowRight } from 'lucide-react';
+import { getCaseStudies, urlForImage } from '@/sanity/client';
 import styles from './SuccessStoriesSection.module.css';
 
 export default function SuccessStoriesSection() {
-  const trackRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    if (!trackRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
-    setCanScrollLeft(scrollLeft > 10);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
-  };
+  const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    checkScroll();
-    const el = trackRef.current;
-    if (el) {
-      el.addEventListener('scroll', checkScroll);
-      window.addEventListener('resize', checkScroll);
-      return () => {
-        el.removeEventListener('scroll', checkScroll);
-        window.removeEventListener('resize', checkScroll);
-      };
+    async function loadSanityCaseStudies() {
+      try {
+        const data = await getCaseStudies();
+        if (data && data.length > 0) {
+          setStories(data);
+        } else {
+          setStories([]);
+        }
+      } catch (err) {
+        console.error('Failed to load Sanity case studies:', err);
+        setStories([]);
+      } finally {
+        setLoading(false);
+      }
     }
+    loadSanityCaseStudies();
   }, []);
 
-  const handleScroll = (direction) => {
-    if (!trackRef.current) return;
-    const { clientWidth } = trackRef.current;
-    const scrollAmount = direction === 'left' ? -clientWidth * 0.75 : clientWidth * 0.75;
-    trackRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  };
-
-  return (
-    <section className={styles.section} id="success-stories">
-      <div className={styles.inner}>
-        {/* Header Row with Title Left and Slider Buttons Right */}
-        <div className={styles.headerRow}>
-          <div className={styles.headerLeft}>
+  if (loading) {
+    return (
+      <section className={styles.section} id="success-stories">
+        <div className={styles.inner}>
+          <div className={styles.header}>
             <p className={styles.eyebrow}>Verified Client Outcomes</p>
             <h2 className={styles.title}>
               Enterprise Transformations & Success Stories
             </h2>
-            <p className={styles.subtitle}>
-              Measurable digital and AI outcomes engineered for modern industry leaders.
-            </p>
           </div>
-
-          {/* Slider Forward & Backward Buttons */}
-          <div className={styles.navArrows}>
-            <button
-              onClick={() => handleScroll('left')}
-              disabled={!canScrollLeft}
-              className={styles.arrowBtn}
-              aria-label="Previous case study"
-            >
-              <ChevronLeft size={22} />
-            </button>
-            <button
-              onClick={() => handleScroll('right')}
-              disabled={!canScrollRight}
-              className={styles.arrowBtn}
-              aria-label="Next case study"
-            >
-              <ChevronRight size={22} />
-            </button>
+          <div style={{ padding: '3rem 0', textAlign: 'center', color: '#64748b' }}>
+            Loading verified outcomes from Sanity...
           </div>
         </div>
+      </section>
+    );
+  }
 
-        {/* Carousel Slider */}
-        <div className={styles.carouselOuter}>
-          <div ref={trackRef} className={styles.carouselTrack}>
-            {CASE_STUDIES.map((story) => (
-              <div key={story.slug} className={styles.card}>
-                {/* Top Image */}
-                <div className={styles.imageWrap}>
-                  <Image
-                    src={story.image}
-                    alt={story.title}
-                    width={600}
-                    height={340}
-                    className={styles.cardImg}
-                  />
-                </div>
+  // If no case studies published in Sanity Studio yet
+  if (!stories || stories.length === 0) {
+    return null;
+  }
 
-                {/* 2-Metric Split Bar */}
-                <div className={styles.metricsBar}>
-                  {story.metrics.map((metric, idx) => (
-                    <div key={idx} className={styles.metricBox}>
-                      <span className={styles.metricValue}>{metric.value}</span>
-                      <span className={styles.metricLabel}>{metric.label}</span>
-                    </div>
-                  ))}
-                </div>
+  return (
+    <section className={styles.section} id="success-stories">
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>Verified Client Outcomes</p>
+          <h2 className={styles.title}>
+            Enterprise Transformations & Success Stories
+          </h2>
+          <p className={styles.subtitle}>
+            Explore how Codesoftic engineers bespoke digital systems and autonomous AI pipelines that drive measurable revenue growth and market leadership.
+          </p>
+        </div>
 
-                {/* Card Content */}
-                <div className={styles.cardContent}>
+        <div className={styles.storiesGrid}>
+          {stories.map((story, idx) => {
+            const imageUrl = story.image ? urlForImage(story.image)?.width(800).height(480).url() : null;
+            const ctaHref = story.ctaUrl || '#';
+            const isExternal = ctaHref.startsWith('http');
+
+            return (
+              <article key={story._id || idx} className={styles.storyCard}>
+                {/* 1. Card Image */}
+                {imageUrl && (
+                  <div className={styles.imageWrapper}>
+                    <Image
+                      src={imageUrl}
+                      alt={story.title || 'Case Study Card Image'}
+                      width={600}
+                      height={240}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
+
+                <div className={styles.cardBody}>
+                  {/* 2. Eyebrow */}
+                  <span className={styles.category}>{story.eyebrow}</span>
+
+                  {/* 3. Main Title */}
                   <h3 className={styles.cardTitle}>{story.title}</h3>
+
+                  {/* 8. Description */}
                   <p className={styles.cardDesc}>{story.description}</p>
-                  <Link
-                    href={`/case-studies/${story.slug}`}
-                    className={styles.caseLink}
-                  >
-                    <span>View case study</span>
-                    <span>→</span>
-                  </Link>
+
+                  {/* 4, 5, 6, 7. Stats Grid */}
+                  <div className={styles.metricsRow}>
+                    <div className={styles.metricBox}>
+                      <span className={styles.metricValue}>{story.stat1Value}</span>
+                      <span className={styles.metricLabel}>{story.stat1Label}</span>
+                    </div>
+
+                    <div className={styles.metricBox}>
+                      <span className={styles.metricValue}>{story.stat2Value}</span>
+                      <span className={styles.metricLabel}>{story.stat2Label}</span>
+                    </div>
+                  </div>
+
+                  {/* 9, 10. CTA */}
+                  {isExternal ? (
+                    <a
+                      href={ctaHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.cardCta}
+                    >
+                      <span>{story.ctaText || 'View case study'}</span>
+                      <ArrowRight size={15} />
+                    </a>
+                  ) : (
+                    <Link href={ctaHref} className={styles.cardCta}>
+                      <span>{story.ctaText || 'View case study'}</span>
+                      <ArrowRight size={15} />
+                    </Link>
+                  )}
                 </div>
-              </div>
-            ))}
-          </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
