@@ -49,17 +49,17 @@
   display: inline-flex;
   align-items: baseline;
   background: linear-gradient(
-    90deg,
-    #0099ff 0%,
-    #00d4ff 25%,
-    #eab308 55%,
-    #f97316 75%,
-    #10b981 100%
+    95deg,
+    #0044E8 0%,
+    #0066FF 25%,
+    #00A4FF 65%,
+    #00E7FF 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(0, 164, 255, 0.18));
 }
 
 /* -------- FULL-WIDTH 100% SLIDER FRAME -------- */
