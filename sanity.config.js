@@ -5,7 +5,7 @@ import { schemaTypes } from './src/sanity/schemas';
 
 export default defineConfig({
   basePath: '/studio',
-  name: 'Codesoftic-Studio',
+  name: 'default',
   title: 'Codesoftic Content Studio',
   projectId,
   dataset,

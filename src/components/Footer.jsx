@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { 
   ArrowRight, 
   Linkedin, 
@@ -17,6 +18,7 @@ import styles from './Footer.module.css';
 const CAL_LINK = "https://cal.com/codesoftic/collaboration-circle?user=codesoftic";
 
 export default function Footer() {
+  const pathname = usePathname();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -41,6 +43,10 @@ export default function Footer() {
       setLoading(false);
     }
   };
+
+  if (pathname && pathname.startsWith('/studio')) {
+    return null;
+  }
 
   return (
     <footer className={styles.footer} id="main-footer">

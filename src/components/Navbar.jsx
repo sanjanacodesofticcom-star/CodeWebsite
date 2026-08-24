@@ -95,6 +95,10 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  if (pathname && pathname.startsWith('/studio')) {
+    return null;
+  }
+
   return (
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} id="main-header">
       <div className={styles.navContainer}>
