@@ -34,19 +34,8 @@ const HOMEPAGE_FAQS = [
 export default function HomePage() {
   return (
     <div>
-      {/* 1. HERO SECTION (Video Background Enabled + Clean White Aesthetic) */}
-      <HeroSection
-        badgeText="Codesoftic • Antigravity Acceleration Engine"
-        title="Architecting the Future of Web & Enterprise AI"
-        highlightedWord="Enterprise AI"
-        description="Codesoftic builds high-converting web applications, autonomous AI workflows, technical SEO dominance, and high-conversion growth infrastructure for ambitious global brands."
-        primaryCtaText="Explore Solutions"
-        primaryCtaLink="#acc-section"
-        secondaryCtaText="Schedule Call on Cal.com"
-        secondaryCtaLink="https://cal.com/codesoftic/collaboration-circle?user=codesoftic"
-        videoSrc="/videos/hero-bg.mp4"
-        posterSrc="/images/hero-light-bg.png"
-      />
+      {/* 1. HERO SECTION (Shaping Tomorrow with AI Today + 4-Slide WebGL Gradient Slider) */}
+      <HeroSection />
 
       {/* 2. INDUSTRIES / TRUST & PARTNERS SECTION (Meta Partner, Shopify Partner, WhatsApp API) */}
       <TrustPartnersSection />

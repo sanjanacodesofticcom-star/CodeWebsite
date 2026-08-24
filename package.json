@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firecms/neat": "^1.0.2",
     "@sanity/client": "^7.26.2",
     "@sanity/image-url": "^1.2.0",
     "lucide-react": "^0.453.0",
