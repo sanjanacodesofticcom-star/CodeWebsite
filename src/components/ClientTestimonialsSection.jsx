@@ -3,53 +3,60 @@
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Layers, Building2, Hexagon, Sparkles, Cpu } from 'lucide-react';
+import { getTestimonials, urlForImage } from '@/sanity/client';
 import styles from './ClientTestimonialsSection.module.css';
 
-const TESTIMONIALS = [
+// Default static fallback reviews if Sanity is empty or not yet connected
+const DEFAULT_TESTIMONIALS = [
   {
-    avatar: '/images/avatars/avatar-1.jpg',
-    companyName: 'Ailitic',
+    logoUrl: null,
     companyIcon: Layers,
-    quote: 'They tailor their solutions to our specific needs and goals.',
-    author: 'Denis Slavska',
-    role: 'CTO, Ailitic',
-    location: 'New York City, New York',
+    companyName: 'Ailitic',
+    testimonialText: 'They tailor their solutions to our specific needs and goals.',
+    userName: 'Denis Slavska',
+    userRole: 'CTO, Ailitic',
+    userLocation: 'New York City, New York',
+    userAvatar: '/images/avatars/avatar-1.jpg',
   },
   {
-    avatar: '/images/avatars/avatar-2.jpg',
-    companyName: 'BUILDWAVE',
+    logoUrl: null,
     companyIcon: Building2,
-    quote: 'They organized their work and internal management was outstanding.',
-    author: 'Jahan Melad',
-    role: 'Project Manager, Buildwave',
-    location: 'San Francisco, California',
+    companyName: 'BUILDWAVE',
+    testimonialText: 'They organized their work and internal management was outstanding.',
+    userName: 'Jahan Melad',
+    userRole: 'Project Manager, Buildwave',
+    userLocation: 'San Francisco, California',
+    userAvatar: '/images/avatars/avatar-2.jpg',
   },
   {
-    avatar: '/images/avatars/avatar-3.jpg',
-    companyName: 'InHive Space',
+    logoUrl: null,
     companyIcon: Hexagon,
-    quote: 'Working with them was a great experience.',
-    author: 'Jim Halpert',
-    role: 'Lead Engineering, InHive Space',
-    location: 'London, United Kingdom',
+    companyName: 'InHive Space',
+    testimonialText: 'Working with them was a great experience.',
+    userName: 'Jim Halpert',
+    userRole: 'Lead Engineering, InHive Space',
+    userLocation: 'London, United Kingdom',
+    userAvatar: '/images/avatars/avatar-3.jpg',
   },
   {
-    avatar: '/images/avatars/avatar-4.jpg',
-    companyName: 'NeuralEdge',
+    logoUrl: null,
     companyIcon: Cpu,
-    quote: 'Codesoftic delivered our AI automation pipelines ahead of schedule with flawless precision.',
-    author: 'Elena Rostova',
-    role: 'VP of Digital, NeuralEdge Labs',
-    location: 'Singapore',
+    companyName: 'NeuralEdge',
+    testimonialText: 'Codesoftic delivered our AI automation pipelines ahead of schedule with flawless precision.',
+    userName: 'Elena Rostova',
+    userRole: 'VP of Digital, NeuralEdge Labs',
+    userLocation: 'Singapore',
+    userAvatar: '/images/avatars/avatar-4.jpg',
   },
   {
-    avatar: '/images/avatars/avatar-5.jpg',
-    companyName: 'Apex Dynamics',
+    logoUrl: null,
     companyIcon: Sparkles,
-    quote: 'Their technical team felt like a true extension of our executive leadership.',
-    author: 'Marcus Sterling',
-    role: 'Founder & CEO, Apex Dynamics',
-    location: 'Boston, Massachusetts',
+    companyName: 'Apex Dynamics',
+    testimonialText: 'Their technical team felt like a true extension of our executive leadership.',
+    userName: 'Marcus Sterling',
+    userRole: 'Founder & CEO, Apex Dynamics',
+    userLocation: 'Boston, Massachusetts',
+    userAvatar: '/images/avatars/avatar-5.jpg',
   },
 ];
 
@@ -57,6 +64,32 @@ export default function ClientTestimonialsSection() {
   const trackRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [reviews, setReviews] = useState(DEFAULT_TESTIMONIALS);
+
+  // Fetch dynamic reviews from Sanity on mount
+  useEffect(() => {
+    async function loadSanityReviews() {
+      try {
+        const sanityData = await getTestimonials();
+        if (sanityData && sanityData.length > 0) {
+          const formatted = sanityData.map((item, idx) => ({
+            logoUrl: urlForImage(item.logo)?.width(80).height(80).url() || null,
+            companyName: item.companyName || 'Partner',
+            testimonialText: item.testimonialText || '',
+            userName: item.userName || 'Client',
+            userRole: item.userRole || '',
+            userLocation: item.userLocation || '',
+            userAvatar: urlForImage(item.userAvatar)?.width(120).height(120).url() || `/images/avatars/avatar-${(idx % 5) + 1}.jpg`,
+            companyIcon: Layers,
+          }));
+          setReviews(formatted);
+        }
+      } catch (err) {
+        console.warn('Failed to load Sanity reviews:', err);
+      }
+    }
+    loadSanityReviews();
+  }, []);
 
   const checkScroll = () => {
     if (trackRef.current) {
@@ -73,12 +106,12 @@ export default function ClientTestimonialsSection() {
       checkScroll();
       return () => el.removeEventListener('scroll', checkScroll);
     }
-  }, []);
+  }, [reviews]);
 
   const handleScroll = (direction) => {
     if (trackRef.current) {
       const cardWidth = trackRef.current.querySelector(`.${styles.card}`)?.offsetWidth || 380;
-      const scrollAmount = cardWidth + 28; // card width + gap
+      const scrollAmount = cardWidth + 28;
       trackRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -94,7 +127,7 @@ export default function ClientTestimonialsSection() {
           <div className={styles.headerLeft}>
             <span className={styles.eyebrow}>OUR REVIEWS</span>
             <h2 className={styles.title}>
-              What Our <span className={styles.titleHighlight}>Clients</span> Say
+              What Our <span className={styles.titleMuted}>Clients</span> Say
             </h2>
           </div>
 
@@ -123,25 +156,36 @@ export default function ClientTestimonialsSection() {
 
         {/* Carousel / Slider Track */}
         <div className={styles.sliderTrack} ref={trackRef}>
-          {TESTIMONIALS.map((t, idx) => {
-            const Icon = t.companyIcon;
+          {reviews.map((t, idx) => {
+            const Icon = t.companyIcon || Layers;
             return (
               <div key={idx} className={styles.card}>
                 <div>
-                  {/* Card Top: Real Profile Avatar & Company Badge */}
+                  {/* Card Top: 1. Logo / Avatar & 4. Company Name */}
                   <div className={styles.cardTop}>
                     <div className={styles.avatarWrapper}>
                       <Image
-                        src={t.avatar}
-                        alt={t.author}
+                        src={t.userAvatar || `/images/avatars/avatar-${(idx % 5) + 1}.jpg`}
+                        alt={t.userName}
                         width={52}
                         height={52}
                         className={styles.avatarImg}
                       />
                     </div>
 
+                    {/* Parameter 1: Logo & Parameter 4: Company Name */}
                     <div className={styles.companyPill}>
-                      <Icon size={16} className={styles.companyIcon} />
+                      {t.logoUrl ? (
+                        <Image
+                          src={t.logoUrl}
+                          alt={`${t.companyName} Logo`}
+                          width={20}
+                          height={20}
+                          style={{ objectFit: 'contain' }}
+                        />
+                      ) : (
+                        <Icon size={16} className={styles.companyIcon} />
+                      )}
                       <span>{t.companyName}</span>
                     </div>
                   </div>
@@ -149,17 +193,17 @@ export default function ClientTestimonialsSection() {
                   {/* Big Blue Quotation Mark */}
                   <div className={styles.quoteMark}>“</div>
 
-                  {/* Bold Headline Quote */}
+                  {/* Parameter 2: Testimonial Text */}
                   <h3 className={styles.quoteHeadline}>
-                    {t.quote}
+                    {t.testimonialText}
                   </h3>
                 </div>
 
-                {/* Author Metadata at Bottom */}
+                {/* Parameter 3: User Name (& Role / Location) */}
                 <div className={styles.authorMeta}>
-                  <span className={styles.authorName}>{t.author}</span>
-                  <span className={styles.authorRole}>{t.role}</span>
-                  <span className={styles.authorLocation}>{t.location}</span>
+                  <span className={styles.authorName}>{t.userName}</span>
+                  {t.userRole && <span className={styles.authorRole}>{t.userRole}</span>}
+                  {t.userLocation && <span className={styles.authorLocation}>{t.userLocation}</span>}
                 </div>
               </div>
             );
