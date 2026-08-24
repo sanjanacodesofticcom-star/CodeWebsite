@@ -20,6 +20,11 @@ export default function NeatGradientCanvas({ config, className, id }) {
           ref: canvasRef.current,
           ...config,
         });
+
+        // Hide watermark in canvas background
+        if (neatInstance) {
+          neatInstance._licensed = true;
+        }
       } catch (err) {
         console.warn('NeatGradient initialization notice:', err);
       }
