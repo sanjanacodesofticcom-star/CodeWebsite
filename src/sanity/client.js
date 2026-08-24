@@ -46,7 +46,7 @@ export async function getTestimonials() {
 
 /**
  * Fetch all Verified Client Outcomes (Case Studies) from Sanity CMS
- * Parameters: image, eyebrow, title, stat1Value, stat1Label, stat2Value, stat2Label, description, ctaText, ctaUrl
+ * Parameters: image, eyebrow, title, slug, stat1Value, stat1Label, stat2Value, stat2Label, description, ctaText, ctaUrl, full story fields
  */
 export async function getCaseStudies() {
   if (!projectId) {
@@ -59,18 +59,66 @@ export async function getCaseStudies() {
       image,
       eyebrow,
       title,
+      slug,
       stat1Value,
       stat1Label,
       stat2Value,
       stat2Label,
       description,
+      clientName,
+      industry,
+      challenge,
+      solution,
+      resultsSummary,
+      testimonialQuote,
+      testimonialAuthor,
       ctaText,
-      ctaUrl
+      ctaUrl,
+      order
     }`;
     const data = await client.fetch(query);
     return data && data.length > 0 ? data : null;
   } catch (error) {
     console.warn('[Sanity CMS] Case Studies fetch notice:', error.message);
+    return null;
+  }
+}
+
+/**
+ * Fetch a single case study by slug or ID
+ */
+export async function getCaseStudyBySlug(slug) {
+  if (!projectId || !slug) {
+    return null;
+  }
+
+  try {
+    const query = `*[_type == "caseStudy" && (slug.current == $slug || _id == $slug)][0] {
+      _id,
+      image,
+      eyebrow,
+      title,
+      slug,
+      stat1Value,
+      stat1Label,
+      stat2Value,
+      stat2Label,
+      description,
+      clientName,
+      industry,
+      challenge,
+      solution,
+      resultsSummary,
+      testimonialQuote,
+      testimonialAuthor,
+      ctaText,
+      ctaUrl,
+      _createdAt
+    }`;
+    const data = await client.fetch(query, { slug });
+    return data || null;
+  } catch (error) {
+    console.warn('[Sanity CMS] Case Study by slug fetch notice:', error.message);
     return null;
   }
 }

@@ -2,15 +2,24 @@
  * Sanity Schema for "Verified Client Outcomes" (Case Studies / Success Stories)
  * Parameters:
  * 1. image (Image) - Card Image
- * 2. eyebrow (String) - Eyebrow Category/Tag
- * 3. title (String) - Main Title
+ * 2. eyebrow (String) - Eyebrow Category/Tag (e.g. 4 VOICE CALLS SHIFT)
+ * 3. title (String) - Main Title (e.g. Outbound RCM Status Follow-Up)
  * 4. stat1Value (String) - Stat 1 Number (e.g. 10x, +310%)
  * 5. stat1Label (String) - Stat 1 Label (e.g. Calls per day)
  * 6. stat2Value (String) - Stat 2 Number (e.g. 40-60%)
  * 7. stat2Label (String) - Stat 2 Label (e.g. Lower labour cost)
  * 8. description (Text) - Description paragraph
  * 9. ctaText (String) - CTA Text (e.g. View case study)
- * 10. ctaUrl (Url) - CTA URL
+ * 10. ctaUrl (Url) - CTA URL / Link
+ * Extended Case Study Story Fields:
+ * - slug (Slug) - Unique page URL path
+ * - clientName (String) - Client / Brand Name
+ * - industry (String) - Industry category
+ * - challenge (Text) - Problem statement
+ * - solution (Text) - Solution architecture
+ * - resultsSummary (Text) - Detailed impact
+ * - testimonialQuote (Text) - Client quote
+ * - testimonialAuthor (String) - Quote author & role
  */
 
 export const caseStudySchema = {
@@ -41,6 +50,16 @@ export const caseStudySchema = {
       type: 'string',
       description: 'e.g. Outbound RCM Status Follow-Up',
       validation: (Rule) => Rule.required().error('Main title is required'),
+    },
+    {
+      name: 'slug',
+      title: 'Slug / URL Path',
+      type: 'slug',
+      description: 'Unique URL for the full case study page (click Generate)',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
     },
     {
       name: 'stat1Value',
@@ -75,21 +94,67 @@ export const caseStudySchema = {
       title: 'Description',
       type: 'text',
       rows: 4,
-      description: 'Your paragraph describing the transformation and outcome',
+      description: 'Card summary describing the transformation and outcome',
       validation: (Rule) => Rule.required().error('Description is required'),
+    },
+    {
+      name: 'clientName',
+      title: 'Client / Brand Name',
+      type: 'string',
+      description: 'e.g. Apex Health Logistics, Horizon Fintech, or ExoSoft',
+    },
+    {
+      name: 'industry',
+      title: 'Industry',
+      type: 'string',
+      description: 'e.g. Healthcare, B2B SaaS, E-Commerce, Logistics',
+    },
+    {
+      name: 'challenge',
+      title: 'The Challenge (Full Story Page)',
+      type: 'text',
+      rows: 4,
+      description: 'The core operational, technical, or revenue bottlenecks the client faced',
+    },
+    {
+      name: 'solution',
+      title: 'The Codesoftic Engineering Solution (Full Story Page)',
+      type: 'text',
+      rows: 4,
+      description: 'The bespoke architecture, AI agents, Next.js system, or automations built',
+    },
+    {
+      name: 'resultsSummary',
+      title: 'Key Results & Business Impact (Full Story Page)',
+      type: 'text',
+      rows: 3,
+      description: 'Measurable efficiency gains, revenue growth, and operational cost savings',
+    },
+    {
+      name: 'testimonialQuote',
+      title: 'Client Quote (Optional)',
+      type: 'text',
+      rows: 3,
+      description: 'Quote from the client executive about working with Codesoftic',
+    },
+    {
+      name: 'testimonialAuthor',
+      title: 'Quote Author & Role (Optional)',
+      type: 'string',
+      description: 'e.g. Dr. Alex Morgan, VP of Operations',
     },
     {
       name: 'ctaText',
       title: 'CTA Text',
       type: 'string',
-      description: 'e.g. View case study or Read full breakdown',
+      description: 'e.g. View case study or Read full story',
       initialValue: 'View case study',
     },
     {
       name: 'ctaUrl',
-      title: 'CTA URL',
+      title: 'Custom CTA URL (Optional Override)',
       type: 'url',
-      description: 'URL link to the case study page or service page',
+      description: 'Custom external or internal link. If blank, automatically links to the full story page.',
       validation: (Rule) =>
         Rule.uri({
           allowRelative: true,

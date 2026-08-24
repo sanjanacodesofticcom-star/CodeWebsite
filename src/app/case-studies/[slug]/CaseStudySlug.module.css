@@ -1,0 +1,293 @@
+/* ============================================================
+   Full Case Study Story Page — Modern Architecture
+   ============================================================ */
+
+.pageWrapper {
+  width: 100%;
+  background: #ffffff;
+  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(6rem, 8vw, 8rem) 0;
+  color: #0f172a;
+}
+
+.container {
+  max-width: var(--max-width, 1440px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0066ff;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.backLink:hover {
+  transform: translateX(-4px);
+  color: #0044cc;
+}
+
+/* -------- HERO SECTION -------- */
+.heroBlock {
+  max-width: 980px;
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.eyebrowBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0066ff;
+  background: rgba(0, 102, 255, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.caseTitle {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin: 0 0 1.5rem 0;
+}
+
+.caseSummary {
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.65;
+  color: #334155;
+  margin: 0;
+}
+
+/* -------- METRICS BANNER -------- */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+.metricCard {
+  background: linear-gradient(135deg, #04044A 0%, #000675 60%, #002288 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  color: #ffffff;
+  box-shadow: 0 20px 40px -10px rgba(0, 6, 117, 0.25);
+  border: 1px solid rgba(0, 231, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.metricValue {
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: #00E7FF;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.metricLabel {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaPillsCard {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  font-weight: 750;
+  color: #0f172a;
+}
+
+/* -------- SHOWCASE IMAGE BANNER -------- */
+.imageBanner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 540px;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
+  background: #04044A;
+}
+
+.bannerImg {
+  object-fit: cover;
+}
+
+/* -------- TWO-COLUMN STORY SECTION -------- */
+.storyLayout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: clamp(3rem, 5vw, 5rem);
+  align-items: flex-start;
+  margin-bottom: clamp(4rem, 6vw, 6rem);
+}
+
+.storyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.storyBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.storyHeading {
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.storyHeading::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 24px;
+  background: #0066ff;
+  border-radius: 99px;
+}
+
+.storyText {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #334155;
+  margin: 0;
+}
+
+/* Quote Box */
+.quoteCard {
+  background: #04044A;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0, 231, 255, 0.25);
+  box-shadow: 0 20px 40px -10px rgba(0, 4, 74, 0.3);
+  position: relative;
+}
+
+.quoteText {
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 1.25rem 0;
+  color: #ffffff;
+}
+
+.quoteAuthor {
+  font-size: 14px;
+  font-weight: 750;
+  color: #00E7FF;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Sidebar Box */
+.storySidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, #0044E8 0%, #0066FF 60%, #00A4FF 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 20px 40px -10px rgba(0, 102, 255, 0.4);
+}
+
+.ctaCardTitle {
+  font-size: 22px;
+  font-weight: 850;
+  margin: 0 0 0.75rem 0;
+}
+
+.ctaCardDesc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1.5rem 0;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: #ffffff;
+  color: #0044E8;
+  font-weight: 750;
+  font-size: 15px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .storyLayout {
+    grid-template-columns: 1fr;
+  }
+  .storySidebar {
+    position: static;
+  }
+}

@@ -126,7 +126,8 @@ export default function SuccessStoriesSection() {
         <div className={styles.sliderTrack} ref={trackRef}>
           {stories.map((story, idx) => {
             const imageUrl = story.image ? urlForImage(story.image)?.width(800).height(450).url() : null;
-            const ctaHref = story.ctaUrl || '#';
+            const targetSlug = story.slug?.current || (story.title ? story.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : 'outbound-rcm-status-follow-up');
+            const ctaHref = story.ctaUrl || `/case-studies/${targetSlug}`;
             const isExternal = typeof ctaHref === 'string' && ctaHref.startsWith('http');
 
             return (
