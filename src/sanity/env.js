@@ -3,7 +3,6 @@ export const apiVersion =
 
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
 
-// Sanity project IDs must only contain a-z, 0-9, and dashes
-export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'codesoftic-demo';
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'q9gea6o1';
 
 export const useCdn = false;
