@@ -1,0 +1,407 @@
+/* ============================================================
+   Sticky Stacking Services Section — Codesoftic Brand Palette
+   ============================================================ */
+
+.sectionWrapper {
+  position: relative;
+  width: 100%;
+  background: #f8fafc;
+  padding: clamp(5.5rem, 8vw, 7.5rem) 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.container {
+  max-width: var(--max-width, 1440px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+/* -------- SECTION HEADER -------- */
+.headerBlock {
+  max-width: 860px;
+  margin-bottom: clamp(3rem, 5vw, 4.5rem);
+  text-align: left;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-blue, #0066ff);
+  background: rgba(0, 102, 255, 0.08);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin: 0 0 1.25rem 0;
+}
+
+.titleGradient {
+  background: linear-gradient(95deg, #0044E8 0%, #0066FF 35%, #00A4FF 70%, #00E7FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.sectionSubtitle {
+  font-size: clamp(16px, 1.2vw, 18.5px);
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* -------- STICKY CARDS CONTAINER -------- */
+.cardsStack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+/* -------- SINGLE STICKY SERVICE CARD -------- */
+.serviceCard {
+  position: sticky;
+  border-radius: 28px;
+  padding: clamp(2.5rem, 4vw, 3.75rem);
+  overflow: hidden;
+  box-shadow: 0 25px 60px -15px rgba(0, 6, 117, 0.14), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(2.5rem, 4.5vw, 4.5rem);
+  align-items: center;
+}
+
+.cardGrid.reversed {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+/* -------- THEME VARIATIONS (Image 3 Brand Palette) -------- */
+/* 1. Theme Light */
+.themeLight {
+  background: #ffffff;
+  border: 1px solid rgba(0, 102, 255, 0.15);
+  color: #0f172a;
+}
+.themeLight .cardEyebrow {
+  color: #0066ff;
+}
+.themeLight .cardTitle {
+  color: #000675;
+}
+.themeLight .cardParagraph {
+  color: #334155;
+}
+.themeLight .exploreHeading {
+  color: #0f172a;
+}
+.themeLight .serviceLink {
+  color: #0066ff;
+  border-bottom: 1px solid rgba(0, 102, 255, 0.2);
+}
+.themeLight .serviceLink:hover {
+  color: #00A4FF;
+  border-color: #00A4FF;
+}
+
+/* 2. Theme Navy (Dark Royal / Navy #04044A) */
+.themeNavy {
+  background: #04044A;
+  border: 1px solid rgba(0, 231, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 1px 1px rgba(0, 231, 255, 0.2);
+}
+.themeNavy .cardEyebrow {
+  color: #00E7FF;
+}
+.themeNavy .cardTitle {
+  color: #ffffff;
+}
+.themeNavy .cardParagraph {
+  color: rgba(255, 255, 255, 0.84);
+}
+.themeNavy .exploreHeading {
+  color: #ffffff;
+}
+.themeNavy .serviceLink {
+  color: #00E7FF;
+  border-bottom: 1px solid rgba(0, 231, 255, 0.25);
+}
+.themeNavy .serviceLink:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* 3. Theme Royal Gradient */
+.themeRoyal {
+  background: linear-gradient(135deg, #000c40 0%, #002277 50%, #0052cc 100%);
+  border: 1px solid rgba(0, 164, 255, 0.35);
+  color: #ffffff;
+  box-shadow: 0 25px 60px -15px rgba(0, 12, 64, 0.5), 0 0 1px 1px rgba(0, 164, 255, 0.25);
+}
+.themeRoyal .cardEyebrow {
+  color: #00E7FF;
+}
+.themeRoyal .cardTitle {
+  color: #ffffff;
+}
+.themeRoyal .cardParagraph {
+  color: rgba(255, 255, 255, 0.88);
+}
+.themeRoyal .exploreHeading {
+  color: #ffffff;
+}
+.themeRoyal .serviceLink {
+  color: #00E7FF;
+  border-bottom: 1px solid rgba(0, 231, 255, 0.3);
+}
+.themeRoyal .serviceLink:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* 4. Theme Obsidian */
+.themeObsidian {
+  background: #020617;
+  border: 1px solid rgba(0, 164, 255, 0.28);
+  color: #ffffff;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(0, 164, 255, 0.2);
+}
+.themeObsidian .cardEyebrow {
+  color: #00A4FF;
+}
+.themeObsidian .cardTitle {
+  color: #ffffff;
+}
+.themeObsidian .cardParagraph {
+  color: rgba(255, 255, 255, 0.82);
+}
+.themeObsidian .exploreHeading {
+  color: #ffffff;
+}
+.themeObsidian .serviceLink {
+  color: #00A4FF;
+  border-bottom: 1px solid rgba(0, 164, 255, 0.25);
+}
+.themeObsidian .serviceLink:hover {
+  color: #00E7FF;
+  border-color: #00E7FF;
+}
+
+/* -------- VISUAL BOX (Side A) -------- */
+.visualBox {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 1.05 / 1;
+  width: 100%;
+  max-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  background: #000675;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+.visualGradientBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.visualImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.serviceCard:hover .visualImage {
+  transform: scale(1.04);
+}
+
+.visualOverlay {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 1.75rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 4, 74, 0.95) 0%,
+    rgba(0, 4, 74, 0.65) 60%,
+    transparent 100%
+  );
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.visualTag {
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00E7FF;
+}
+
+.visualTitleWrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.visualBadgeTitle {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+  margin: 0;
+}
+
+.visualArrow {
+  color: #00E7FF;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.serviceCard:hover .visualArrow {
+  transform: translateX(4px);
+}
+
+/* -------- CONTENT COLUMN (Side B) -------- */
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardEyebrow {
+  font-size: 12.5px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+.cardTitle {
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.5rem 0;
+}
+
+.cardParagraph {
+  font-size: clamp(15px, 1.1vw, 16.5px);
+  line-height: 1.68;
+  margin: 0 0 1rem 0;
+}
+
+.exploreSection {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.themeLight .exploreSection {
+  border-top-color: rgba(0, 102, 255, 0.12);
+}
+
+.exploreHeading {
+  font-size: 13.5px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem 0;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+  padding-bottom: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.linkArrow {
+  transition: transform 0.2s ease;
+}
+
+.serviceLink:hover .linkArrow {
+  transform: translateX(5px);
+}
+
+/* -------- RESPONSIVE BREAKPOINTS -------- */
+@media (max-width: 1024px) {
+  .serviceCard {
+    padding: 2.25rem;
+  }
+  .cardGrid,
+  .cardGrid.reversed {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .cardGrid.reversed .contentBox {
+    order: 1;
+  }
+  .cardGrid.reversed .visualBox {
+    order: 2;
+  }
+  .visualBox {
+    max-height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceCard {
+    padding: 1.75rem;
+    border-radius: 20px;
+  }
+  .cardTitle {
+    font-size: 24px;
+  }
+  .cardParagraph {
+    font-size: 14.5px;
+  }
+  .visualBox {
+    aspect-ratio: 1.2 / 1;
+  }
+}

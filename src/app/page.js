@@ -1,6 +1,7 @@
 import HeroSection from '@/components/HeroSection';
 import TrustPartnersSection from '@/components/TrustPartnersSection';
 import AdobeChallengesSection from '@/components/AdobeChallengesSection';
+import StickyServicesSection from '@/components/StickyServicesSection';
 import ExploreFeaturesSection from '@/components/ExploreFeaturesSection';
 import PartnershipTiersSection from '@/components/PartnershipTiersSection';
 import SuccessStoriesSection from '@/components/SuccessStoriesSection';
@@ -40,10 +41,13 @@ export default function HomePage() {
       {/* 2. INDUSTRIES / TRUST & PARTNERS SECTION (Meta Partner, Shopify Partner, WhatsApp API) */}
       <TrustPartnersSection />
 
-      {/* 3. SERVICES SECTION (Adobe-Style 3-card + 2-card media layout) */}
+      {/* 3. DIGITAL CHALLENGES SECTION (Address your biggest digital & growth challenges with Codesoftic) */}
       <AdobeChallengesSection />
 
-      {/* 4. EXPLORE ALL FEATURES TABBED PRODUCT SECTION */}
+      {/* 4. STICKY STACKING SERVICES SECTION (4 Tiered Cards in Codesoftic Brand Palette) */}
+      <StickyServicesSection />
+
+      {/* 5. EXPLORE ALL FEATURES TABBED PRODUCT SECTION */}
       <ExploreFeaturesSection />
 
       {/* 5. STRATEGIC PARTNERSHIP ENGAGEMENT TIERS (Startups, Enterprises, B2B) */}
